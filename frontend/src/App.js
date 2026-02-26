@@ -9,6 +9,7 @@ import Manufacturing from '@/components/manufacturing/Manufacturing';
 import Production from '@/components/production/Production';
 import Inventory from '@/components/inventory/Inventory';
 import MigrationViewer from '@/components/migrations/MigrationViewer';
+import ERDiagram from '@/components/schema/ERDiagram';
 
 const pages = {
   'dashboard': DashboardOverview,
@@ -18,6 +19,7 @@ const pages = {
   'manufacturing': Manufacturing,
   'production': Production,
   'inventory': Inventory,
+  'er-diagram': ERDiagram,
   'migrations': MigrationViewer,
 };
 
