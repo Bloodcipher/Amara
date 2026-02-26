@@ -360,7 +360,8 @@ class AMARAAPITester:
         if failed_tests:
             print(f"\n❌ FAILED TESTS ({len(failed_tests)}):")
             for test in failed_tests:
-                print(f"   • {test['name']} - {test['error'] or f'Status {test['actual_status']}'}")
+                error_msg = test['error'] or f"Status {test['actual_status']}"
+                print(f"   • {test['name']} - {error_msg}")
         
         return self.tests_passed == self.tests_run
 
