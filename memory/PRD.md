@@ -53,6 +53,20 @@ AMARA is a jewellery manufacturing MIS (Management Information System) for a jew
 - [x] Status filter for Job Cards
 - [x] Reusable UI components (SearchBar, Pagination, ExportButton)
 
+### Phase 3 - Real-Time Production Tracker (Feb 26, 2026)
+- [x] Control Tower (production floor dashboard with live status)
+- [x] Supabase Realtime enabled on job_cards, qc_logs, production tables
+- [x] Live WebSocket connection with 15s polling fallback
+- [x] Status overview strip (Pending/In Progress/Completed/On Hold/Cancelled)
+- [x] In Progress jobs with progress rings and quick actions (Complete/Hold)
+- [x] Pending Queue with Start buttons
+- [x] Artisan Workload panel (active/queued counts per artisan)
+- [x] Activity Feed (real-time event stream)
+- [x] Today's Summary (completed today, QC pass rate, inventory value)
+- [x] Artisan Portal (select artisan -> personal dashboard)
+- [x] Artisan job management (Start, Complete, Hold, inline QC logging)
+- [x] Sample job card data seeded (4 cards across 3 artisans)
+
 ## Database Schema (16 tables)
 - **SKU Lookups**: sku_face_value, sku_category, sku_material, sku_motif, sku_finding, sku_locking, sku_size
 - **Core**: products (auto-SKU trigger), users
