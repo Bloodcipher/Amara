@@ -243,9 +243,9 @@ class AMARAAPITester:
                 print(f"      {role}: {count} users")
 
     def test_dices_and_manufacturing(self):
-        """Test dices and manufacturing endpoints"""
+        """Test dices and manufacturing endpoints with search"""
         print("\n" + "="*50)
-        print("TESTING MANUFACTURING & DICES")
+        print("TESTING MANUFACTURING & DICES (WITH SEARCH)")
         print("="*50)
         
         # Test dices
@@ -255,6 +255,17 @@ class AMARAAPITester:
             print(f"   🎲 Found {len(response)} dices")
             for dice in response[:5]:  # Show first 5
                 print(f"      {dice.get('dice_number', 'N/A')} ({dice.get('dice_type', 'unknown')})")
+        
+        # Test dices search
+        success, search_response = self.run_test("Dices Search", "GET", "dices?q=D-101", 200,
+                                               description="Search dices by 'D-101' keyword")
+        if success:
+            print(f"   🔍 Search 'D-101' returned {len(search_response)} dices")
+            for dice in search_response:
+                dice_num = dice.get('dice_number', 'N/A')
+                dice_type = dice.get('dice_type', 'unknown')
+                if 'd-101' in dice_num.lower():
+                    print(f"   ✅ Match found: {dice_num} ({dice_type})")
         
         # Test motif mappings
         success, response = self.run_test("Get Motif Mappings", "GET", "dice-mappings/motif", 200,
