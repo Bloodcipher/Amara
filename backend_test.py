@@ -562,6 +562,7 @@ def main():
         tester.test_migrations()
         tester.test_sku_generator()
         tester.test_schema_info()
+        tester.test_csv_exports()  # NEW: Test CSV export functionality
         
         # Print summary
         all_passed = tester.print_summary()
