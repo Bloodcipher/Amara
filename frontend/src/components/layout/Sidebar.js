@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   LayoutDashboard, Tags, Package, Factory, ClipboardList,
-  Warehouse, FileCode, Wand2, ChevronLeft, ChevronRight, Gem
+  Warehouse, FileCode, Wand2, ChevronLeft, ChevronRight, Gem, GitBranch
 } from 'lucide-react';
 
 const navItems = [
@@ -13,6 +13,7 @@ const navItems = [
   { id: 'manufacturing', label: 'Manufacturing', icon: Factory },
   { id: 'production', label: 'Production & QC', icon: ClipboardList },
   { id: 'inventory', label: 'Inventory', icon: Warehouse },
+  { id: 'er-diagram', label: 'Schema Explorer', icon: GitBranch },
   { id: 'migrations', label: 'SQL Migrations', icon: FileCode },
 ];
 
