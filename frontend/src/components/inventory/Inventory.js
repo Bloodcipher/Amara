@@ -73,6 +73,12 @@ export default function Inventory() {
           {showForm ? <X className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
           {showForm ? 'Cancel' : 'Add Stock'}
         </button>
+        </div>
+      </div>
+
+      {/* Search */}
+      <div className="mb-4 max-w-md">
+        <SearchBar value={search} onChange={handleSearch} placeholder="Search by product, SKU, or location..." />
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
