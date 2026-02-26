@@ -202,10 +202,10 @@ class AMARAAPITester:
                 "name": "Updated Test Product",
                 "description": "Updated description for testing"
             }
-            success, updated_product = self.run_test("Update Product", "PUT", f"products/{product_id}", 200,
+            update_success, updated_product = self.run_test("Update Product", "PUT", f"products/{product_id}", 200,
                                                    data=update_data,
                                                    description="Test product name/description update")
-            if success:
+            if update_success:
                 print(f"   ✏️ Updated product: {updated_product.get('name')}")
                 
                 # Restore original name
@@ -214,9 +214,9 @@ class AMARAAPITester:
                              data=restore_data, description="Restore original product name")
             
             # Test soft DELETE product  
-            success, delete_result = self.run_test("Soft Delete Product", "DELETE", f"products/{product_id}", 200,
+            delete_success, delete_result = self.run_test("Soft Delete Product", "DELETE", f"products/{product_id}", 200,
                                                  description="Test soft delete (sets is_active=false)")
-            if success:
+            if delete_success:
                 print(f"   🗑️ Soft delete mode: {delete_result.get('mode', 'unknown')}")
                 
                 # Restore active status
