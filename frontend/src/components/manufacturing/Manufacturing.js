@@ -19,10 +19,10 @@ export default function Manufacturing() {
   const [diceForm, setDiceForm] = useState({ dice_number: '', dice_type: '', description: '' });
   const [mapForm, setMapForm] = useState({ dice_id: '', target_id: '' });
 
-  const loadData = useCallback(async () => {
+  const loadData = useCallback(async (q = search) => {
     try {
       const [d, mm, lm, mots, locks] = await Promise.all([
-        fetchDices(), fetchDiceMotifMappings(), fetchDiceLockingMappings(),
+        fetchDices(q), fetchDiceMotifMappings(), fetchDiceLockingMappings(),
         fetchLookup('motif'), fetchLookup('locking'),
       ]);
       setDices(d); setMotifMappings(mm); setLockingMappings(lm);
