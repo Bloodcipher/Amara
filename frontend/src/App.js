@@ -23,12 +23,13 @@ const pages = {
 
 function App() {
   const [activePage, setActivePage] = useState('dashboard');
+  const [sidebarWidth, setSidebarWidth] = useState(256);
   const PageComponent = pages[activePage] || DashboardOverview;
 
   return (
     <div className="min-h-screen bg-[#050505]">
-      <Sidebar activePage={activePage} onNavigate={setActivePage} />
-      <main className="ml-64 min-h-screen">
+      <Sidebar activePage={activePage} onNavigate={setActivePage} onWidthChange={setSidebarWidth} />
+      <main style={{ marginLeft: sidebarWidth }} className="min-h-screen transition-all duration-300">
         <div className="p-6 md:p-10 max-w-[1600px]">
           <PageComponent />
         </div>
