@@ -26,9 +26,15 @@ export default function Inventory() {
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [search]);
 
   useEffect(() => { loadData(); }, [loadData]);
+
+  const handleSearch = (val) => {
+    setSearch(val);
+    clearTimeout(searchTimeout.current);
+    searchTimeout.current = setTimeout(() => loadData(val), 400);
+  };
 
   const handleCreate = async () => {
     if (!form.product_id) return;
