@@ -1,8 +1,9 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Factory, Plus, X } from 'lucide-react';
 import { fetchDices, createDice, fetchDiceMotifMappings, createDiceMotifMapping,
          fetchDiceLockingMappings, createDiceLockingMapping, fetchLookup } from '@/lib/api';
+import SearchBar from '@/components/ui/SearchBar';
 
 export default function Manufacturing() {
   const [dices, setDices] = useState([]);
