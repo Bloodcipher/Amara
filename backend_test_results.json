@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-02-26T15:25:00.088618",
+  "timestamp": "2026-02-26T15:38:06.259187",
   "summary": {
-    "total_tests": 43,
-    "passed": 41,
-    "failed": 2,
-    "success_rate": 95.34883720930233
+    "total_tests": 47,
+    "passed": 43,
+    "failed": 4,
+    "success_rate": 91.48936170212765
   },
   "detailed_results": [
     {
@@ -42,12 +42,12 @@
       "success": true,
       "response_data": {
         "total_products": 3,
-        "active_job_cards": 0,
+        "active_job_cards": 4,
         "total_inventory_value": 0.0,
         "qc_pass_rate": 100.0,
         "total_users": 6,
         "total_dices": 6,
-        "pending_jobs": 0,
+        "pending_jobs": 1,
         "completed_jobs": 0
       },
       "error": null
@@ -1089,8 +1089,77 @@
       "actual_status": 200,
       "success": true,
       "response_data": {
-        "items": [],
-        "total": 0,
+        "items": [
+          {
+            "id": "efcb5471-5ac0-46b3-bd6e-844bf2b157ff",
+            "product_id": "bf4296c6-4701-4538-b0bf-0d4f1895369d",
+            "job_card_number": "0BSFXSS000-P001",
+            "target_qty": 50,
+            "completed_qty": 15,
+            "assigned_artisan_id": "742fc36a-2ae0-4dc2-8e08-18a55d045d12",
+            "status": "in_progress",
+            "priority": "high",
+            "start_date": null,
+            "due_date": null,
+            "notes": null,
+            "created_at": "2026-02-26T15:34:43.071030+00:00",
+            "product_name": "Silver Bugadi Floral",
+            "product_sku": "0BSFXSS000",
+            "artisan_name": "Rajesh Kumar"
+          },
+          {
+            "id": "d5331009-9637-4583-974c-b457594e9456",
+            "product_id": "bf4296c6-4701-4538-b0bf-0d4f1895369d",
+            "job_card_number": "0BSFXSS000-P002",
+            "target_qty": 30,
+            "completed_qty": 9,
+            "assigned_artisan_id": "a8af8d10-a9df-40bf-864f-b3bcddc5bf4b",
+            "status": "in_progress",
+            "priority": "normal",
+            "start_date": null,
+            "due_date": null,
+            "notes": null,
+            "created_at": "2026-02-26T15:34:43.071030+00:00",
+            "product_name": "Silver Bugadi Floral",
+            "product_sku": "0BSFXSS000",
+            "artisan_name": "Priya Sharma"
+          },
+          {
+            "id": "3206803f-4636-41e6-8c7a-74286c60f4d3",
+            "product_id": "60803d88-78da-45c2-be27-0cfed2305846",
+            "job_card_number": "0BSFXSS001-P004",
+            "target_qty": 25,
+            "completed_qty": 0,
+            "assigned_artisan_id": "48c23411-56d5-4e3b-8a40-c36e8e1d9a2c",
+            "status": "pending",
+            "priority": "normal",
+            "start_date": null,
+            "due_date": null,
+            "notes": null,
+            "created_at": "2026-02-26T15:34:43.071030+00:00",
+            "product_name": "Silver Bugadi Floral v2",
+            "product_sku": "0BSFXSS001",
+            "artisan_name": "Sunita Devi"
+          },
+          {
+            "id": "e853023a-94b0-49bb-8af9-0c20ee391929",
+            "product_id": "60803d88-78da-45c2-be27-0cfed2305846",
+            "job_card_number": "0BSFXSS001-P003",
+            "target_qty": 100,
+            "completed_qty": 0,
+            "assigned_artisan_id": "742fc36a-2ae0-4dc2-8e08-18a55d045d12",
+            "status": "in_progress",
+            "priority": "urgent",
+            "start_date": null,
+            "due_date": null,
+            "notes": null,
+            "created_at": "2026-02-26T15:34:43.071030+00:00",
+            "product_name": "Silver Bugadi Floral v2",
+            "product_sku": "0BSFXSS001",
+            "artisan_name": "Rajesh Kumar"
+          }
+        ],
+        "total": 4,
         "page": 1,
         "page_size": 50,
         "total_pages": 1
@@ -1246,6 +1315,10 @@
         {
           "filename": "009_seed_data.sql",
           "content": "-- ============================================================\n-- AMARA ERP/MIS - Migration 009: Seed Data\n-- Sample data for all lookup tables and test records\n-- ============================================================\n\n-- SKU Face Value (0-9, A-Z representing value ranges)\nINSERT INTO sku_face_value (name, code, description) VALUES\n    ('Economy', '0', 'Economy range - under 1000'),\n    ('Standard', '1', 'Standard range - 1000-5000'),\n    ('Premium', '2', 'Premium range - 5000-15000'),\n    ('Luxury', '3', 'Luxury range - 15000-50000'),\n    ('Ultra Luxury', '4', 'Ultra luxury range - 50000+'),\n    ('Bridal', '5', 'Bridal collection'),\n    ('Festive', '6', 'Festive/seasonal collection'),\n    ('Heritage', '7', 'Heritage/antique collection'),\n    ('Contemporary', '8', 'Contemporary modern collection'),\n    ('Limited Edition', '9', 'Limited edition pieces')\nON CONFLICT (code) DO NOTHING;\n\n-- SKU Category\nINSERT INTO sku_category (name, code, description) VALUES\n    ('Bugadi', 'B', 'Traditional nose ring'),\n    ('Nath', 'N', 'Nose ring with chain'),\n    ('Jhumka', 'J', 'Bell-shaped earring'),\n    ('Kada', 'K', 'Rigid bangle'),\n    ('Pendant', 'P', 'Necklace pendant'),\n    ('Ring', 'R', 'Finger ring'),\n    ('Anklet', 'A', 'Ankle bracelet'),\n    ('Choker', 'C', 'Short necklace'),\n    ('Mangalsutra', 'M', 'Wedding necklace'),\n    ('Tikka', 'T', 'Forehead ornament')\nON CONFLICT (code) DO NOTHING;\n\n-- SKU Material\nINSERT INTO sku_material (name, code, description) VALUES\n    ('Silver 925', 'S', 'Sterling silver 925'),\n    ('Gold 22K', 'G', 'Gold 22 karat'),\n    ('Gold 18K', 'H', 'Gold 18 karat'),\n    ('Platinum', 'P', 'Platinum 950'),\n    ('Rose Gold', 'R', 'Rose gold 18K'),\n    ('Brass', 'B', 'Brass alloy'),\n    ('Copper', 'C', 'Pure copper'),\n    ('White Gold', 'W', 'White gold 18K')\nON CONFLICT (code) DO NOTHING;\n\n-- SKU Motif\nINSERT INTO sku_motif (name, code, description) VALUES\n    ('Floral', 'F', 'Flower and petal designs'),\n    ('Geometric', 'G', 'Geometric patterns'),\n    ('Paisley', 'P', 'Traditional paisley motif'),\n    ('Temple', 'T', 'Temple-inspired design'),\n    ('Peacock', 'K', 'Peacock feather motif'),\n    ('Abstract', 'A', 'Modern abstract design'),\n    ('Vine', 'V', 'Vine and leaf patterns'),\n    ('Mandala', 'M', 'Sacred mandala design'),\n    ('Filigree', 'I', 'Intricate filigree work'),\n    ('None', 'X', 'No motif / plain')\nON CONFLICT (code) DO NOTHING;\n\n-- SKU Finding\nINSERT INTO sku_finding (name, code, description) VALUES\n    ('NA', 'X', 'Not applicable'),\n    ('Post', 'P', 'Post/stud back'),\n    ('Hook', 'H', 'Hook/wire back'),\n    ('Clip', 'C', 'Clip-on back'),\n    ('Lever', 'L', 'Lever back'),\n    ('Lobster', 'B', 'Lobster claw clasp'),\n    ('Spring', 'S', 'Spring ring clasp'),\n    ('Toggle', 'T', 'Toggle clasp'),\n    ('Magnetic', 'M', 'Magnetic clasp')\nON CONFLICT (code) DO NOTHING;\n\n-- SKU Locking\nINSERT INTO sku_locking (name, code, description) VALUES\n    ('Screw', 'S', 'Screw-back locking'),\n    ('Push', 'P', 'Push-back locking'),\n    ('Hook', 'H', 'Hook locking'),\n    ('Snap', 'N', 'Snap-fit locking'),\n    ('Hinge', 'I', 'Hinge locking'),\n    ('None', 'X', 'No locking mechanism'),\n    ('Clasp', 'C', 'Clasp locking'),\n    ('Pin', 'D', 'Pin-based locking')\nON CONFLICT (code) DO NOTHING;\n\n-- SKU Size\nINSERT INTO sku_size (name, code, description) VALUES\n    ('Extra Small', 'T', 'XS - Tiny'),\n    ('Small', 'S', 'Small size'),\n    ('Medium', 'M', 'Medium size'),\n    ('Large', 'L', 'Large size'),\n    ('Extra Large', 'X', 'XL size'),\n    ('Free Size', 'F', 'One size fits all'),\n    ('Custom', 'C', 'Custom sizing'),\n    ('Adjustable', 'A', 'Adjustable size')\nON CONFLICT (code) DO NOTHING;\n\n-- Sample Users (Artisans)\nINSERT INTO users (name, email, role, phone) VALUES\n    ('Rajesh Kumar', 'rajesh@amara.com', 'artisan', '+91-9876543210'),\n    ('Priya Sharma', 'priya@amara.com', 'artisan', '+91-9876543211'),\n    ('Amit Patel', 'amit@amara.com', 'supervisor', '+91-9876543212'),\n    ('Sunita Devi', 'sunita@amara.com', 'artisan', '+91-9876543213'),\n    ('Vikram Singh', 'vikram@amara.com', 'qc_inspector', '+91-9876543214'),\n    ('Meera Joshi', 'meera@amara.com', 'admin', '+91-9876543215')\nON CONFLICT (email) DO NOTHING;\n\n-- Sample Dices\nINSERT INTO dices (dice_number, dice_type, description) VALUES\n    ('D-101', 'stamping', 'Floral stamping die for bugadi'),\n    ('D-102', 'casting', 'Casting mold for jhumka bells'),\n    ('D-103', 'embossing', 'Paisley embossing die'),\n    ('D-104', 'cutting', 'Geometric cutting die for pendants'),\n    ('D-105', 'stamping', 'Temple motif stamping die'),\n    ('D-106', 'filigree', 'Filigree wire shaping die')\nON CONFLICT (dice_number) DO NOTHING;\n"
+        },
+        {
+          "filename": "010_enable_realtime.sql",
+          "content": "-- ============================================================\n-- AMARA ERP/MIS - Migration 010: Enable Supabase Realtime\n-- Enable realtime on production-critical tables\n-- ============================================================\n\n-- Enable realtime replication for job_cards, qc_logs, and production tables\nALTER PUBLICATION supabase_realtime ADD TABLE job_cards;\nALTER PUBLICATION supabase_realtime ADD TABLE qc_logs;\nALTER PUBLICATION supabase_realtime ADD TABLE production;\n"
         }
       ],
       "error": null
@@ -3641,6 +3714,183 @@
       "error": null
     },
     {
+      "name": "Get Job Cards for Realtime Testing",
+      "endpoint": "job-cards",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": {
+        "items": [
+          {
+            "id": "efcb5471-5ac0-46b3-bd6e-844bf2b157ff",
+            "product_id": "bf4296c6-4701-4538-b0bf-0d4f1895369d",
+            "job_card_number": "0BSFXSS000-P001",
+            "target_qty": 50,
+            "completed_qty": 15,
+            "assigned_artisan_id": "742fc36a-2ae0-4dc2-8e08-18a55d045d12",
+            "status": "in_progress",
+            "priority": "high",
+            "start_date": null,
+            "due_date": null,
+            "notes": null,
+            "created_at": "2026-02-26T15:34:43.071030+00:00",
+            "product_name": "Silver Bugadi Floral",
+            "product_sku": "0BSFXSS000",
+            "artisan_name": "Rajesh Kumar"
+          },
+          {
+            "id": "d5331009-9637-4583-974c-b457594e9456",
+            "product_id": "bf4296c6-4701-4538-b0bf-0d4f1895369d",
+            "job_card_number": "0BSFXSS000-P002",
+            "target_qty": 30,
+            "completed_qty": 9,
+            "assigned_artisan_id": "a8af8d10-a9df-40bf-864f-b3bcddc5bf4b",
+            "status": "in_progress",
+            "priority": "normal",
+            "start_date": null,
+            "due_date": null,
+            "notes": null,
+            "created_at": "2026-02-26T15:34:43.071030+00:00",
+            "product_name": "Silver Bugadi Floral",
+            "product_sku": "0BSFXSS000",
+            "artisan_name": "Priya Sharma"
+          },
+          {
+            "id": "3206803f-4636-41e6-8c7a-74286c60f4d3",
+            "product_id": "60803d88-78da-45c2-be27-0cfed2305846",
+            "job_card_number": "0BSFXSS001-P004",
+            "target_qty": 25,
+            "completed_qty": 0,
+            "assigned_artisan_id": "48c23411-56d5-4e3b-8a40-c36e8e1d9a2c",
+            "status": "pending",
+            "priority": "normal",
+            "start_date": null,
+            "due_date": null,
+            "notes": null,
+            "created_at": "2026-02-26T15:34:43.071030+00:00",
+            "product_name": "Silver Bugadi Floral v2",
+            "product_sku": "0BSFXSS001",
+            "artisan_name": "Sunita Devi"
+          },
+          {
+            "id": "e853023a-94b0-49bb-8af9-0c20ee391929",
+            "product_id": "60803d88-78da-45c2-be27-0cfed2305846",
+            "job_card_number": "0BSFXSS001-P003",
+            "target_qty": 100,
+            "completed_qty": 0,
+            "assigned_artisan_id": "742fc36a-2ae0-4dc2-8e08-18a55d045d12",
+            "status": "in_progress",
+            "priority": "urgent",
+            "start_date": null,
+            "due_date": null,
+            "notes": null,
+            "created_at": "2026-02-26T15:34:43.071030+00:00",
+            "product_name": "Silver Bugadi Floral v2",
+            "product_sku": "0BSFXSS001",
+            "artisan_name": "Rajesh Kumar"
+          }
+        ],
+        "total": 4,
+        "page": 1,
+        "page_size": 50,
+        "total_pages": 1
+      },
+      "error": null
+    },
+    {
+      "name": "Update Job Status (Start)",
+      "endpoint": "job-cards/3206803f-4636-41e6-8c7a-74286c60f4d3",
+      "method": "PATCH",
+      "expected_status": 200,
+      "actual_status": 404,
+      "success": false,
+      "response_data": null,
+      "error": {
+        "detail": "Not Found"
+      }
+    },
+    {
+      "name": "Get Artisans for QC Testing",
+      "endpoint": "users",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": [
+        {
+          "id": "87e31bcd-bc0c-4b46-8e80-be493532cdc8",
+          "name": "Amit Patel",
+          "email": "amit@amara.com",
+          "role": "supervisor",
+          "phone": "+91-9876543212",
+          "is_active": true
+        },
+        {
+          "id": "48f5c8ab-85d5-4fc4-9fed-ffe1020d0083",
+          "name": "Meera Joshi",
+          "email": "meera@amara.com",
+          "role": "admin",
+          "phone": "+91-9876543215",
+          "is_active": true
+        },
+        {
+          "id": "a8af8d10-a9df-40bf-864f-b3bcddc5bf4b",
+          "name": "Priya Sharma",
+          "email": "priya@amara.com",
+          "role": "artisan",
+          "phone": "+91-9876543211",
+          "is_active": true
+        },
+        {
+          "id": "742fc36a-2ae0-4dc2-8e08-18a55d045d12",
+          "name": "Rajesh Kumar",
+          "email": "rajesh@amara.com",
+          "role": "artisan",
+          "phone": "+91-9876543210",
+          "is_active": true
+        },
+        {
+          "id": "48c23411-56d5-4e3b-8a40-c36e8e1d9a2c",
+          "name": "Sunita Devi",
+          "email": "sunita@amara.com",
+          "role": "artisan",
+          "phone": "+91-9876543213",
+          "is_active": true
+        },
+        {
+          "id": "7c106015-6ed8-4b8b-8c03-9e35339c564d",
+          "name": "Vikram Singh",
+          "email": "vikram@amara.com",
+          "role": "qc_inspector",
+          "phone": "+91-9876543214",
+          "is_active": true
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "Create QC Log (Inline QC)",
+      "endpoint": "qc-logs",
+      "method": "POST",
+      "expected_status": 201,
+      "actual_status": 200,
+      "success": false,
+      "response_data": null,
+      "error": {
+        "id": "46547839-5a1b-4f63-9cee-92961eab9d67",
+        "job_card_id": "efcb5471-5ac0-46b3-bd6e-844bf2b157ff",
+        "inspected_by": "a8af8d10-a9df-40bf-864f-b3bcddc5bf4b",
+        "qty_passed": 5,
+        "qty_failed": 1,
+        "defect_reason": "Minor surface defect",
+        "inspection_date": "2026-02-26T15:38:01.867616+00:00",
+        "notes": null,
+        "job_card_number": null,
+        "inspector_name": null
+      }
+    },
+    {
       "name": "Export Products",
       "endpoint": "export/products",
       "method": "GET",
@@ -3667,7 +3917,7 @@
       "expected_status": 200,
       "actual_status": 200,
       "success": true,
-      "response_data": "Job Card #,SKU,Product,Target Qty,Completed,Artisan,Status,Priority,Start Date,Due Date\r\n",
+      "response_data": "Job Card #,SKU,Product,Target Qty,Completed,Artisan,Status,Priority,Start Date,Due Date\r\n0BSFXSS000-P001,0BSFXSS000,Silver Bugadi Floral,50,15,Rajesh Kumar,in_progress,high,,\r\n0BSFXSS000-P002,0BSFXSS000,Silver Bugadi Floral,30,9,Priya Sharma,in_progress,normal,,\r\n0BSFXSS001-P004,0BSFXSS001,Silver Bugadi Floral v2,25,0,Sunita Devi,pending,normal,,\r\n0BSFXSS001-P003,0BSFXSS001,Silver Bugadi Floral v2,100,0,Rajesh Kumar,in_progress,urgent,,\r\n",
       "error": null
     },
     {
@@ -3677,7 +3927,7 @@
       "expected_status": 200,
       "actual_status": 200,
       "success": true,
-      "response_data": "Job Card #,Inspector,Passed,Failed,Defect Reason,Inspection Date\r\n",
+      "response_data": "Job Card #,Inspector,Passed,Failed,Defect Reason,Inspection Date\r\n0BSFXSS000-P001,Priya Sharma,5,1,Minor surface defect,2026-02-26 15:38:01.867616+00:00\r\n",
       "error": null
     }
   ]
