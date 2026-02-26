@@ -1,0 +1,124 @@
+{
+  "identity": "E1 - The Anti-AI Designer",
+  "project_name": "AMARA",
+  "theme_strategy": "The Alchemist's Vault (Jewel & Luxury)",
+  "design_philosophy": {
+    "core_principle": "Fusion of Precision and Opulence. The precision of a Swiss watch + the warmth of melted gold.",
+    "visual_hierarchy": "Dark Obsidian backgrounds > Subtle Gold/Bronze accents > Crisp White text.",
+    "anti_patterns": [
+      "No generic 'SaaS Blue' or 'Teal' for primary actions.",
+      "No 'Inter' font for headings.",
+      "No flat gray backgrounds. Use noise/grain or deep rich gradients.",
+      "No default Shadcn borders (replace with custom metallic borders)."
+    ]
+  },
+  "typography": {
+    "font_family_headings": "Playfair Display, serif",
+    "font_family_body": "Manrope, sans-serif",
+    "font_family_code": "JetBrains Mono, monospace",
+    "weights": {
+      "light": 300,
+      "regular": 400,
+      "medium": 500,
+      "bold": 700
+    },
+    "scale": {
+      "h1": "text-4xl md:text-5xl tracking-tight leading-none",
+      "h2": "text-3xl tracking-tight",
+      "h3": "text-2xl font-medium",
+      "body": "text-base leading-relaxed",
+      "caption": "text-xs tracking-widest uppercase text-muted-foreground"
+    },
+    "installation_guide": "Import from Google Fonts: Playfair Display (400, 700), Manrope (300, 400, 500, 700), JetBrains Mono (400)"
+  },
+  "colors": {
+    "palette": {
+      "background": "#050505",
+      "surface": "#0A0A0A",
+      "surface_highlight": "#171717",
+      "border": "#262626",
+      "border_highlight": "#404040",
+      "primary": "#D4AF37",
+      "primary_foreground": "#000000",
+      "secondary": "#E2E8F0",
+      "secondary_foreground": "#000000",
+      "accent_gold": "#D4AF37",
+      "accent_bronze": "#CD7F32",
+      "success": "#10B981",
+      "error": "#991B1B",
+      "text_main": "#F8FAFC",
+      "text_muted": "#94A3B8"
+    },
+    "gradients": {
+      "gold_sheen": "linear-gradient(135deg, #D4AF37 0%, #A67C00 100%)",
+      "obsidian_glass": "linear-gradient(180deg, rgba(20,20,20,0.8) 0%, rgba(10,10,10,0.9) 100%)"
+    }
+  },
+  "layout_strategies": {
+    "dashboard_grid": "Bento Grid Mode A (Tetris). Use `grid-cols-1 md:grid-cols-4 lg:grid-cols-12` with `gap-6`.",
+    "table_layout": "Density Mode B. 100% width, no outer padding on mobile. Sticky headers with backdrop-blur-md.",
+    "spacing": {
+      "container_padding": "p-6 md:p-10",
+      "section_gap": "gap-8"
+    }
+  },
+  "component_styling": {
+    "cards": {
+      "style": "The Tracing Beam",
+      "classes": "bg-neutral-950/50 border border-white/5 hover:border-amber-500/30 transition-colors duration-500 backdrop-blur-xl relative overflow-hidden group",
+      "hover_effect": "Add a subtle golden glow or gradient border on hover."
+    },
+    "buttons": {
+      "primary": "bg-[#D4AF37] text-black font-semibold hover:bg-[#B5952F] rounded-none px-8 py-6 uppercase tracking-wider text-xs shadow-[0_0_15px_rgba(212,175,55,0.3)]",
+      "secondary": "bg-transparent border border-white/20 text-white hover:bg-white/5 rounded-none px-6 py-6 uppercase tracking-wider text-xs",
+      "ghost": "text-neutral-400 hover:text-[#D4AF37] hover:bg-transparent"
+    },
+    "inputs": {
+      "style": "bg-neutral-900/50 border-white/10 focus:border-[#D4AF37]/50 focus:ring-1 focus:ring-[#D4AF37]/20 rounded-md h-12 text-sm font-body"
+    },
+    "tables": {
+      "header": "bg-neutral-950/80 backdrop-blur text-xs uppercase tracking-widest text-neutral-500 font-medium py-4",
+      "row": "border-b border-white/5 hover:bg-white/[0.02] transition-colors h-14 font-body text-sm",
+      "sku_cell": "font-mono text-[#D4AF37] text-xs"
+    },
+    "navigation": {
+      "sidebar": "bg-[#050505] border-r border-white/5 w-64 fixed h-full z-50",
+      "active_item": "bg-white/5 text-[#D4AF37] border-r-2 border-[#D4AF37]"
+    }
+  },
+  "visual_assets": {
+    "icons_library": "lucide-react",
+    "image_urls": {
+      "hero_background": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop",
+      "gold_texture": "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2000&auto=format&fit=crop",
+      "workshop_craftsman": "https://images.unsplash.com/photo-1617038224558-2880802047b4?q=80&w=2000&auto=format&fit=crop",
+      "product_ring": "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=2000&auto=format&fit=crop",
+      "login_cover": "https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?q=80&w=2000&auto=format&fit=crop"
+    }
+  },
+  "motion": {
+    "libraries": "framer-motion",
+    "transitions": {
+      "default": "transition-all duration-300 ease-out",
+      "page_load": "initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}",
+      "hover_lift": "hover:-translate-y-1 transition-transform duration-300"
+    }
+  },
+  "universal_guidelines": [
+    "Always use `data-testid` on interactive elements.",
+    "Do NOT use gradients for text.",
+    "Use 'Sonner' for toasts.",
+    "Dark Mode is mandatory. Do not build a light mode toggle unless specifically asked.",
+    "All SKU displays must be Monospace.",
+    "Use `lucide-react` for icons."
+  ],
+  "implementation_steps": [
+    "1. Setup Tailwind Colors in `tailwind.config.js` with the Palette.",
+    "2. Install Fonts (Playfair Display, Manrope, JetBrains Mono).",
+    "3. Create the 'AppShell' layout with Sidebar and Topbar.",
+    "4. Build the 'DashboardOverview' using the Bento Grid.",
+    "5. Implement 'SKUGenerator' with a slot-machine animation effect.",
+    "6. Build the 'ProductTable' with robust filtering and custom styling.",
+    "7. Ensure all Forms use Shadcn components styled with the guidelines."
+  ]
+}
