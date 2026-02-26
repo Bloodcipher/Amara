@@ -269,30 +269,60 @@ class AMARAAPITester:
             print(f"   🔒 Found {len(response)} locking mappings")
 
     def test_production_workflows(self):
-        """Test job cards and QC logs"""
+        """Test job cards and QC logs with search and pagination"""
         print("\n" + "="*50)
-        print("TESTING PRODUCTION WORKFLOWS")
+        print("TESTING PRODUCTION WORKFLOWS (SEARCH + PAGINATION)")
         print("="*50)
         
-        # Test job cards
-        success, response = self.run_test("Get Job Cards", "GET", "job-cards", 200,
-                                        description="Retrieve all job cards")
+        # Test job cards with pagination
+        success, response = self.run_test("Get Job Cards (Paginated)", "GET", "job-cards", 200,
+                                        description="Retrieve job cards with pagination structure")
         if success:
-            print(f"   📋 Found {len(response)} job cards")
-            if response:
-                statuses = {}
-                for jc in response:
-                    status = jc.get('status', 'unknown')
-                    statuses[status] = statuses.get(status, 0) + 1
+            # Check pagination structure
+            if isinstance(response, dict) and 'items' in response:
+                items = response['items']
+                total = response.get('total', 0)
+                print(f"   📋 Found {total} total job cards, showing {len(items)} items")
                 
-                for status, count in statuses.items():
-                    print(f"      {status}: {count} job cards")
+                # Show status distribution
+                if items:
+                    statuses = {}
+                    for jc in items:
+                        status = jc.get('status', 'unknown')
+                        statuses[status] = statuses.get(status, 0) + 1
+                    
+                    for status, count in statuses.items():
+                        print(f"      {status}: {count} job cards")
+            else:
+                print(f"   📋 Found {len(response)} job cards (old format)")
         
-        # Test QC logs
-        success, response = self.run_test("Get QC Logs", "GET", "qc-logs", 200,
-                                        description="Retrieve all QC inspection logs")
+        # Test job cards search with filters
+        success, search_response = self.run_test("Job Cards Search with Status", "GET", 
+                                               "job-cards?q=test&status=pending&page=1", 200,
+                                               description="Search job cards with text and status filter")
         if success:
-            print(f"   ✅ Found {len(response)} QC logs")
+            if isinstance(search_response, dict) and 'items' in search_response:
+                items = search_response['items']
+                print(f"   🔍 Search with filters returned {len(items)} job cards")
+            
+        # Test QC logs with pagination and search
+        success, response = self.run_test("Get QC Logs (Paginated)", "GET", "qc-logs", 200,
+                                        description="Retrieve QC logs with pagination")
+        if success:
+            if isinstance(response, dict) and 'items' in response:
+                items = response['items']
+                total = response.get('total', 0)
+                print(f"   ✅ Found {total} total QC logs, showing {len(items)} items")
+            else:
+                print(f"   ✅ Found {len(response)} QC logs (old format)")
+        
+        # Test QC logs search
+        success, search_response = self.run_test("QC Logs Search", "GET", "qc-logs?q=test&page=1", 200,
+                                               description="Search QC logs with pagination")
+        if success:
+            if isinstance(search_response, dict) and 'items' in search_response:
+                items = search_response['items']
+                print(f"   🔍 QC logs search returned {len(items)} results")
 
     def test_inventory(self):
         """Test inventory endpoints"""
