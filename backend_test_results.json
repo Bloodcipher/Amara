@@ -1,0 +1,2211 @@
+{
+  "timestamp": "2026-02-26T14:57:47.607171",
+  "summary": {
+    "total_tests": 29,
+    "passed": 29,
+    "failed": 0,
+    "success_rate": 100.0
+  },
+  "detailed_results": [
+    {
+      "name": "API Root",
+      "endpoint": "",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": {
+        "message": "AMARA ERP/MIS API",
+        "status": "operational"
+      },
+      "error": null
+    },
+    {
+      "name": "Health Check",
+      "endpoint": "health",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": {
+        "status": "healthy",
+        "database": "connected"
+      },
+      "error": null
+    },
+    {
+      "name": "Dashboard Stats",
+      "endpoint": "dashboard/stats",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": {
+        "total_products": 2,
+        "active_job_cards": 0,
+        "total_inventory_value": 0.0,
+        "qc_pass_rate": 100.0,
+        "total_users": 6,
+        "total_dices": 6,
+        "pending_jobs": 0,
+        "completed_jobs": 0
+      },
+      "error": null
+    },
+    {
+      "name": "Get Face_Value Lookup",
+      "endpoint": "lookups/face_value",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": [
+        {
+          "id": "ec802608-4183-415a-8c0f-a62f62485c82",
+          "name": "Economy",
+          "code": "0",
+          "description": "Economy range - under 1000",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "3185bf1d-b1f3-4c59-b025-512b6eda138c",
+          "name": "Standard",
+          "code": "1",
+          "description": "Standard range - 1000-5000",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "70033e3a-646b-4191-98ee-1b0dcbd94d51",
+          "name": "Premium",
+          "code": "2",
+          "description": "Premium range - 5000-15000",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "1664c852-2a1b-4099-90d7-71b534c5020f",
+          "name": "Luxury",
+          "code": "3",
+          "description": "Luxury range - 15000-50000",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "8312590e-0b77-40ae-a5b9-590c0b7678f2",
+          "name": "Ultra Luxury",
+          "code": "4",
+          "description": "Ultra luxury range - 50000+",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "dd559a1a-8887-4274-bf59-91408f1ed7bc",
+          "name": "Bridal",
+          "code": "5",
+          "description": "Bridal collection",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "65dce159-dd8c-49e0-b5a0-017af25d29f1",
+          "name": "Festive",
+          "code": "6",
+          "description": "Festive/seasonal collection",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "f20d5a18-1a95-4930-8f96-24060b6f2717",
+          "name": "Heritage",
+          "code": "7",
+          "description": "Heritage/antique collection",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "b4f1952d-ebad-456c-ae32-d2b984c1f083",
+          "name": "Contemporary",
+          "code": "8",
+          "description": "Contemporary modern collection",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "3653e655-35f1-4d3d-b1db-42d81ffec25e",
+          "name": "Limited Edition",
+          "code": "9",
+          "description": "Limited edition pieces",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "Get Category Lookup",
+      "endpoint": "lookups/category",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": [
+        {
+          "id": "b2b457f5-6097-403e-aff9-1b045ebef216",
+          "name": "Anklet",
+          "code": "A",
+          "description": "Ankle bracelet",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "012f9a2a-bd46-49d4-b821-c3faf70f2352",
+          "name": "Bugadi",
+          "code": "B",
+          "description": "Traditional nose ring",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "f8059126-9a2d-436d-8323-1da7da98df2f",
+          "name": "Choker",
+          "code": "C",
+          "description": "Short necklace",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "55b30115-0539-45f4-b6f2-f63a25fcfc51",
+          "name": "Jhumka",
+          "code": "J",
+          "description": "Bell-shaped earring",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "ea638c42-6e0d-4b8e-9177-2d23d4ac6453",
+          "name": "Kada",
+          "code": "K",
+          "description": "Rigid bangle",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "f8d252cc-95eb-4d65-b54e-e461c976aacd",
+          "name": "Mangalsutra",
+          "code": "M",
+          "description": "Wedding necklace",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "2ca9f59c-c61c-4d07-9fa4-6f89dffc1813",
+          "name": "Nath",
+          "code": "N",
+          "description": "Nose ring with chain",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "9b5737a7-0f14-4aeb-b99f-46c87fa4f435",
+          "name": "Pendant",
+          "code": "P",
+          "description": "Necklace pendant",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "be09e3e7-aa6e-41d5-a5e1-1d88aad6556e",
+          "name": "Ring",
+          "code": "R",
+          "description": "Finger ring",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "565fb47f-893b-44ce-94b2-3346827294f7",
+          "name": "Tikka",
+          "code": "T",
+          "description": "Forehead ornament",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "Get Material Lookup",
+      "endpoint": "lookups/material",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": [
+        {
+          "id": "f4ccd86a-e216-4647-85e3-350c3566e5c4",
+          "name": "Brass",
+          "code": "B",
+          "description": "Brass alloy",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "9376748d-e299-48c4-b654-59ef8b09bb05",
+          "name": "Copper",
+          "code": "C",
+          "description": "Pure copper",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "97469ed2-211c-4ab5-a866-8445ed25376d",
+          "name": "Gold 22K",
+          "code": "G",
+          "description": "Gold 22 karat",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "b9847efc-04aa-4cc3-9551-52d8c5834bed",
+          "name": "Gold 18K",
+          "code": "H",
+          "description": "Gold 18 karat",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "6e81eb45-c3fd-4199-9f6d-60762194e7e0",
+          "name": "Platinum",
+          "code": "P",
+          "description": "Platinum 950",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "dc89d3b9-0c3b-4252-a120-9010115683d4",
+          "name": "Rose Gold",
+          "code": "R",
+          "description": "Rose gold 18K",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "9a572b70-84ef-44b8-8407-05a011f0df19",
+          "name": "Silver 925",
+          "code": "S",
+          "description": "Sterling silver 925",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "d019126e-3abd-4212-b086-5dcbeb024dc2",
+          "name": "White Gold",
+          "code": "W",
+          "description": "White gold 18K",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "Get Motif Lookup",
+      "endpoint": "lookups/motif",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": [
+        {
+          "id": "5f1e8715-cadb-4463-bdbc-dc4fa4827238",
+          "name": "Abstract",
+          "code": "A",
+          "description": "Modern abstract design",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "d9a91c8d-df82-4e10-af71-c1d226ad11fa",
+          "name": "Floral",
+          "code": "F",
+          "description": "Flower and petal designs",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "b9bef783-051e-429a-ad9a-2a622c4650db",
+          "name": "Geometric",
+          "code": "G",
+          "description": "Geometric patterns",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "856e9fa2-115b-468f-a600-86fa51376f5e",
+          "name": "Filigree",
+          "code": "I",
+          "description": "Intricate filigree work",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "06074a6c-c5e0-439c-a898-7b31193c9fc9",
+          "name": "Peacock",
+          "code": "K",
+          "description": "Peacock feather motif",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "1fb249ec-2de8-41ca-9b1f-aef299d22f1c",
+          "name": "Mandala",
+          "code": "M",
+          "description": "Sacred mandala design",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "90aa6ef7-f161-419e-bb82-d174062317e7",
+          "name": "Paisley",
+          "code": "P",
+          "description": "Traditional paisley motif",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "bc339171-9d14-4a16-93d7-eff533e62d7f",
+          "name": "Temple",
+          "code": "T",
+          "description": "Temple-inspired design",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "60e4bcd4-97e9-427b-9926-9ee29f3df2a8",
+          "name": "Vine",
+          "code": "V",
+          "description": "Vine and leaf patterns",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "0f0ecad5-2c4d-466f-94a8-9b15499c19b4",
+          "name": "None",
+          "code": "X",
+          "description": "No motif / plain",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "Get Finding Lookup",
+      "endpoint": "lookups/finding",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": [
+        {
+          "id": "80b9fb1b-0ff5-4d6b-8169-ff7610095bbd",
+          "name": "Lobster",
+          "code": "B",
+          "description": "Lobster claw clasp",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "309b988b-1714-4626-aeea-c64c1fc33873",
+          "name": "Clip",
+          "code": "C",
+          "description": "Clip-on back",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "814d6ddf-2f3f-4337-9f7c-ebc13fba24bd",
+          "name": "Hook",
+          "code": "H",
+          "description": "Hook/wire back",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "4fcc3b3f-a6fa-4071-b342-c27cda12637e",
+          "name": "Lever",
+          "code": "L",
+          "description": "Lever back",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "c0b19dc0-72f4-4cb3-b609-38218dfc4fce",
+          "name": "Magnetic",
+          "code": "M",
+          "description": "Magnetic clasp",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "ae3dfa36-867e-46e6-8545-b7be9ef2a50b",
+          "name": "Post",
+          "code": "P",
+          "description": "Post/stud back",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "9f8413c1-7e34-4338-a74a-0b77e7c058e1",
+          "name": "Spring",
+          "code": "S",
+          "description": "Spring ring clasp",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "d541ba98-87d0-4aae-9b7c-fdb26f477ef9",
+          "name": "Toggle",
+          "code": "T",
+          "description": "Toggle clasp",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "3b3e45d0-6e1c-42cc-bcc9-794cbf072912",
+          "name": "NA",
+          "code": "X",
+          "description": "Not applicable",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "Get Locking Lookup",
+      "endpoint": "lookups/locking",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": [
+        {
+          "id": "1100c774-da37-4741-94a0-c70b3f8e57bd",
+          "name": "Clasp",
+          "code": "C",
+          "description": "Clasp locking",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "ec0361df-6d7b-4293-a10a-d2b8968f0ece",
+          "name": "Pin",
+          "code": "D",
+          "description": "Pin-based locking",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "908612b8-8a84-4487-81e5-c4ddcd36979a",
+          "name": "Hook",
+          "code": "H",
+          "description": "Hook locking",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "d577cbf9-6f90-42a3-b761-4a4f1aa93aaf",
+          "name": "Hinge",
+          "code": "I",
+          "description": "Hinge locking",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "0569ec26-9767-497e-b3d9-a0a52dce7808",
+          "name": "Snap",
+          "code": "N",
+          "description": "Snap-fit locking",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "2057b8be-51c1-4c82-a0eb-8f2d3166c2e2",
+          "name": "Push",
+          "code": "P",
+          "description": "Push-back locking",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "7778afb0-7d42-4faf-b672-5dc1b43ce289",
+          "name": "Screw",
+          "code": "S",
+          "description": "Screw-back locking",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "cf72b14b-f33f-405c-8df2-cc7aa7e860b2",
+          "name": "None",
+          "code": "X",
+          "description": "No locking mechanism",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "Get Size Lookup",
+      "endpoint": "lookups/size",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": [
+        {
+          "id": "513f9065-f431-42ff-b385-065ccf822503",
+          "name": "Adjustable",
+          "code": "A",
+          "description": "Adjustable size",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "85b38a28-4ed1-413d-ab8c-c0a36af89084",
+          "name": "Custom",
+          "code": "C",
+          "description": "Custom sizing",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "db87e6f4-9c03-42b7-a7b9-ce9e8214a84f",
+          "name": "Free Size",
+          "code": "F",
+          "description": "One size fits all",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "3c2ff1b2-71dd-4aaf-8182-7e2637198a96",
+          "name": "Large",
+          "code": "L",
+          "description": "Large size",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "adeb0f67-db25-426d-966d-3c67d9555f91",
+          "name": "Medium",
+          "code": "M",
+          "description": "Medium size",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "c5b6f783-2cb5-4749-b32e-50d7500eac78",
+          "name": "Small",
+          "code": "S",
+          "description": "Small size",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "03f45658-00a2-4907-820a-de2dc3296a39",
+          "name": "Extra Small",
+          "code": "T",
+          "description": "XS - Tiny",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "63fa999b-61d6-4309-9f49-3f09532cce29",
+          "name": "Extra Large",
+          "code": "X",
+          "description": "XL size",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "Get Products",
+      "endpoint": "products",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": [
+        {
+          "id": "60803d88-78da-45c2-be27-0cfed2305846",
+          "name": "Silver Bugadi Floral v2",
+          "description": "Test product 2",
+          "sku": "0BSFXSS001",
+          "sequence_num": 1,
+          "face_value_id": "ec802608-4183-415a-8c0f-a62f62485c82",
+          "category_id": "012f9a2a-bd46-49d4-b821-c3faf70f2352",
+          "material_id": "9a572b70-84ef-44b8-8407-05a011f0df19",
+          "motif_id": "d9a91c8d-df82-4e10-af71-c1d226ad11fa",
+          "finding_id": "3b3e45d0-6e1c-42cc-bcc9-794cbf072912",
+          "locking_id": "7778afb0-7d42-4faf-b672-5dc1b43ce289",
+          "size_id": "c5b6f783-2cb5-4749-b32e-50d7500eac78",
+          "is_active": true,
+          "created_at": "2026-02-26T14:44:54.899735+00:00",
+          "face_value_code": "0",
+          "category_code": "B",
+          "material_code": "S",
+          "motif_code": "F",
+          "finding_code": "X",
+          "locking_code": "S",
+          "size_code": "S",
+          "face_value_name": "Economy",
+          "category_name": "Bugadi",
+          "material_name": "Silver 925",
+          "motif_name": "Floral",
+          "finding_name": "NA",
+          "locking_name": "Screw",
+          "size_name": "Small"
+        },
+        {
+          "id": "bf4296c6-4701-4538-b0bf-0d4f1895369d",
+          "name": "Silver Bugadi Floral",
+          "description": "Test product",
+          "sku": "0BSFXSS000",
+          "sequence_num": 0,
+          "face_value_id": "ec802608-4183-415a-8c0f-a62f62485c82",
+          "category_id": "012f9a2a-bd46-49d4-b821-c3faf70f2352",
+          "material_id": "9a572b70-84ef-44b8-8407-05a011f0df19",
+          "motif_id": "d9a91c8d-df82-4e10-af71-c1d226ad11fa",
+          "finding_id": "3b3e45d0-6e1c-42cc-bcc9-794cbf072912",
+          "locking_id": "7778afb0-7d42-4faf-b672-5dc1b43ce289",
+          "size_id": "c5b6f783-2cb5-4749-b32e-50d7500eac78",
+          "is_active": true,
+          "created_at": "2026-02-26T14:44:54.899735+00:00",
+          "face_value_code": "0",
+          "category_code": "B",
+          "material_code": "S",
+          "motif_code": "F",
+          "finding_code": "X",
+          "locking_code": "S",
+          "size_code": "S",
+          "face_value_name": "Economy",
+          "category_name": "Bugadi",
+          "material_name": "Silver 925",
+          "motif_name": "Floral",
+          "finding_name": "NA",
+          "locking_name": "Screw",
+          "size_name": "Small"
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "Get Users",
+      "endpoint": "users",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": [
+        {
+          "id": "87e31bcd-bc0c-4b46-8e80-be493532cdc8",
+          "name": "Amit Patel",
+          "email": "amit@amara.com",
+          "role": "supervisor",
+          "phone": "+91-9876543212",
+          "is_active": true
+        },
+        {
+          "id": "48f5c8ab-85d5-4fc4-9fed-ffe1020d0083",
+          "name": "Meera Joshi",
+          "email": "meera@amara.com",
+          "role": "admin",
+          "phone": "+91-9876543215",
+          "is_active": true
+        },
+        {
+          "id": "a8af8d10-a9df-40bf-864f-b3bcddc5bf4b",
+          "name": "Priya Sharma",
+          "email": "priya@amara.com",
+          "role": "artisan",
+          "phone": "+91-9876543211",
+          "is_active": true
+        },
+        {
+          "id": "742fc36a-2ae0-4dc2-8e08-18a55d045d12",
+          "name": "Rajesh Kumar",
+          "email": "rajesh@amara.com",
+          "role": "artisan",
+          "phone": "+91-9876543210",
+          "is_active": true
+        },
+        {
+          "id": "48c23411-56d5-4e3b-8a40-c36e8e1d9a2c",
+          "name": "Sunita Devi",
+          "email": "sunita@amara.com",
+          "role": "artisan",
+          "phone": "+91-9876543213",
+          "is_active": true
+        },
+        {
+          "id": "7c106015-6ed8-4b8b-8c03-9e35339c564d",
+          "name": "Vikram Singh",
+          "email": "vikram@amara.com",
+          "role": "qc_inspector",
+          "phone": "+91-9876543214",
+          "is_active": true
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "Get Dices",
+      "endpoint": "dices",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": [
+        {
+          "id": "9b35d39f-a910-4eca-8d4b-1688cf5d63c2",
+          "dice_number": "D-101",
+          "dice_type": "stamping",
+          "description": "Floral stamping die for bugadi",
+          "is_active": true,
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "ef7574da-4020-4565-9eb8-742360a96514",
+          "dice_number": "D-102",
+          "dice_type": "casting",
+          "description": "Casting mold for jhumka bells",
+          "is_active": true,
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "0b9d2479-d536-43e0-a7f9-cdcdd5410c94",
+          "dice_number": "D-103",
+          "dice_type": "embossing",
+          "description": "Paisley embossing die",
+          "is_active": true,
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "f66d0164-0459-47bf-8656-032161a85ec2",
+          "dice_number": "D-104",
+          "dice_type": "cutting",
+          "description": "Geometric cutting die for pendants",
+          "is_active": true,
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "c5699a9e-bcf0-4bf4-ab7f-21b92d86fb84",
+          "dice_number": "D-105",
+          "dice_type": "stamping",
+          "description": "Temple motif stamping die",
+          "is_active": true,
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "3e08499e-f836-4f28-aa94-ae4c008227ca",
+          "dice_number": "D-106",
+          "dice_type": "filigree",
+          "description": "Filigree wire shaping die",
+          "is_active": true,
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "Get Motif Mappings",
+      "endpoint": "dice-mappings/motif",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": [],
+      "error": null
+    },
+    {
+      "name": "Get Locking Mappings",
+      "endpoint": "dice-mappings/locking",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": [],
+      "error": null
+    },
+    {
+      "name": "Get Job Cards",
+      "endpoint": "job-cards",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": [],
+      "error": null
+    },
+    {
+      "name": "Get QC Logs",
+      "endpoint": "qc-logs",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": [],
+      "error": null
+    },
+    {
+      "name": "Get Inventory",
+      "endpoint": "inventory",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": [],
+      "error": null
+    },
+    {
+      "name": "Get Production",
+      "endpoint": "production",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": [],
+      "error": null
+    },
+    {
+      "name": "Get Migrations",
+      "endpoint": "migrations",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": [
+        {
+          "filename": "001_lookup_tables.sql",
+          "content": "-- ============================================================\n-- AMARA ERP/MIS - Migration 001: Master Lookup Tables\n-- These 7 tables form the components of the Base-36 SKU system\n-- ============================================================\n\n-- 1. SKU Face Value\nCREATE TABLE IF NOT EXISTS sku_face_value (\n    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),\n    name VARCHAR(100) NOT NULL,\n    code CHAR(1) NOT NULL UNIQUE,\n    description TEXT,\n    created_at TIMESTAMPTZ DEFAULT NOW(),\n    updated_at TIMESTAMPTZ DEFAULT NOW()\n);\n\n-- 2. SKU Category (e.g., 'B' for Bugadi)\nCREATE TABLE IF NOT EXISTS sku_category (\n    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),\n    name VARCHAR(100) NOT NULL,\n    code CHAR(1) NOT NULL UNIQUE,\n    description TEXT,\n    created_at TIMESTAMPTZ DEFAULT NOW(),\n    updated_at TIMESTAMPTZ DEFAULT NOW()\n);\n\n-- 3. SKU Material (e.g., 'S' for Silver)\nCREATE TABLE IF NOT EXISTS sku_material (\n    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),\n    name VARCHAR(100) NOT NULL,\n    code CHAR(1) NOT NULL UNIQUE,\n    description TEXT,\n    created_at TIMESTAMPTZ DEFAULT NOW(),\n    updated_at TIMESTAMPTZ DEFAULT NOW()\n);\n\n-- 4. SKU Motif (e.g., 'F' for Floral)\nCREATE TABLE IF NOT EXISTS sku_motif (\n    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),\n    name VARCHAR(100) NOT NULL,\n    code CHAR(1) NOT NULL UNIQUE,\n    description TEXT,\n    created_at TIMESTAMPTZ DEFAULT NOW(),\n    updated_at TIMESTAMPTZ DEFAULT NOW()\n);\n\n-- 5. SKU Finding (e.g., 'X' for NA)\nCREATE TABLE IF NOT EXISTS sku_finding (\n    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),\n    name VARCHAR(100) NOT NULL,\n    code CHAR(1) NOT NULL UNIQUE,\n    description TEXT,\n    created_at TIMESTAMPTZ DEFAULT NOW(),\n    updated_at TIMESTAMPTZ DEFAULT NOW()\n);\n\n-- 6. SKU Locking (e.g., 'S' for Screw)\nCREATE TABLE IF NOT EXISTS sku_locking (\n    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),\n    name VARCHAR(100) NOT NULL,\n    code CHAR(1) NOT NULL UNIQUE,\n    description TEXT,\n    created_at TIMESTAMPTZ DEFAULT NOW(),\n    updated_at TIMESTAMPTZ DEFAULT NOW()\n);\n\n-- 7. SKU Size (e.g., 'S' for Small)\nCREATE TABLE IF NOT EXISTS sku_size (\n    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),\n    name VARCHAR(100) NOT NULL,\n    code CHAR(1) NOT NULL UNIQUE,\n    description TEXT,\n    created_at TIMESTAMPTZ DEFAULT NOW(),\n    updated_at TIMESTAMPTZ DEFAULT NOW()\n);\n"
+        },
+        {
+          "filename": "002_users_table.sql",
+          "content": "-- ============================================================\n-- AMARA ERP/MIS - Migration 002: Users Table\n-- Basic users table referenced by job_cards\n-- ============================================================\n\nCREATE TABLE IF NOT EXISTS users (\n    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),\n    name VARCHAR(200) NOT NULL,\n    email VARCHAR(255) UNIQUE NOT NULL,\n    role VARCHAR(50) NOT NULL DEFAULT 'artisan',\n    phone VARCHAR(20),\n    is_active BOOLEAN DEFAULT TRUE,\n    created_at TIMESTAMPTZ DEFAULT NOW(),\n    updated_at TIMESTAMPTZ DEFAULT NOW()\n);\n\nCREATE INDEX IF NOT EXISTS idx_users_email ON users(email);\nCREATE INDEX IF NOT EXISTS idx_users_role ON users(role);\n"
+        },
+        {
+          "filename": "003_products_table.sql",
+          "content": "-- ============================================================\n-- AMARA ERP/MIS - Migration 003: Core Products Table\n-- Links to all 7 SKU lookup tables with auto-generated SKU\n-- ============================================================\n\nCREATE TABLE IF NOT EXISTS products (\n    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),\n    name VARCHAR(255) NOT NULL,\n    description TEXT,\n    face_value_id UUID NOT NULL REFERENCES sku_face_value(id) ON DELETE RESTRICT,\n    category_id UUID NOT NULL REFERENCES sku_category(id) ON DELETE RESTRICT,\n    material_id UUID NOT NULL REFERENCES sku_material(id) ON DELETE RESTRICT,\n    motif_id UUID NOT NULL REFERENCES sku_motif(id) ON DELETE RESTRICT,\n    finding_id UUID NOT NULL REFERENCES sku_finding(id) ON DELETE RESTRICT,\n    locking_id UUID NOT NULL REFERENCES sku_locking(id) ON DELETE RESTRICT,\n    size_id UUID NOT NULL REFERENCES sku_size(id) ON DELETE RESTRICT,\n    sku VARCHAR(10) UNIQUE,\n    sequence_num INTEGER,\n    is_active BOOLEAN DEFAULT TRUE,\n    created_at TIMESTAMPTZ DEFAULT NOW(),\n    updated_at TIMESTAMPTZ DEFAULT NOW()\n);\n\nCREATE INDEX IF NOT EXISTS idx_products_sku ON products(sku);\nCREATE INDEX IF NOT EXISTS idx_products_category ON products(category_id);\nCREATE INDEX IF NOT EXISTS idx_products_material ON products(material_id);\nCREATE INDEX IF NOT EXISTS idx_products_active ON products(is_active);\n"
+        },
+        {
+          "filename": "004_sku_trigger.sql",
+          "content": "-- ============================================================\n-- AMARA ERP/MIS - Migration 004: PL/pgSQL Base-36 SKU Generator\n-- BEFORE INSERT trigger on products table\n-- Handles edge cases up to 46,655 (ZZZ in Base-36)\n-- ============================================================\n\n-- Drop existing trigger and function if they exist (for idempotency)\nDROP TRIGGER IF EXISTS trg_generate_sku ON products;\nDROP FUNCTION IF EXISTS generate_product_sku();\n\n-- Create the Base-36 SKU generation function\nCREATE OR REPLACE FUNCTION generate_product_sku()\nRETURNS TRIGGER AS $$\nDECLARE\n    v_prefix VARCHAR(7);\n    v_face_code CHAR(1);\n    v_cat_code CHAR(1);\n    v_mat_code CHAR(1);\n    v_motif_code CHAR(1);\n    v_find_code CHAR(1);\n    v_lock_code CHAR(1);\n    v_size_code CHAR(1);\n    v_max_seq INTEGER;\n    v_new_seq INTEGER;\n    v_suffix VARCHAR(3);\n    v_base36_chars VARCHAR(36) := '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';\n    v_remainder INTEGER;\n    v_quotient INTEGER;\nBEGIN\n    -- -------------------------------------------------------\n    -- Step 1: Read the 1-character code from all 7 lookup tables\n    -- -------------------------------------------------------\n    SELECT code INTO STRICT v_face_code FROM sku_face_value WHERE id = NEW.face_value_id;\n    SELECT code INTO STRICT v_cat_code FROM sku_category WHERE id = NEW.category_id;\n    SELECT code INTO STRICT v_mat_code FROM sku_material WHERE id = NEW.material_id;\n    SELECT code INTO STRICT v_motif_code FROM sku_motif WHERE id = NEW.motif_id;\n    SELECT code INTO STRICT v_find_code FROM sku_finding WHERE id = NEW.finding_id;\n    SELECT code INTO STRICT v_lock_code FROM sku_locking WHERE id = NEW.locking_id;\n    SELECT code INTO STRICT v_size_code FROM sku_size WHERE id = NEW.size_id;\n\n    -- -------------------------------------------------------\n    -- Step 2: Concatenate to form the 7-character prefix\n    -- Example: '0BSFXSS'\n    -- -------------------------------------------------------\n    v_prefix := v_face_code || v_cat_code || v_mat_code || v_motif_code || v_find_code || v_lock_code || v_size_code;\n\n    -- -------------------------------------------------------\n    -- Step 3: Find the highest sequence_num for this prefix\n    -- -------------------------------------------------------\n    SELECT COALESCE(MAX(sequence_num), -1)\n    INTO v_max_seq\n    FROM products\n    WHERE sku LIKE v_prefix || '___';\n\n    -- Increment (first product with this prefix starts at 0)\n    v_new_seq := v_max_seq + 1;\n\n    -- -------------------------------------------------------\n    -- Step 4: Validate - Max Base-36 with 3 chars is ZZZ = 46655\n    -- -------------------------------------------------------\n    IF v_new_seq > 46655 THEN\n        RAISE EXCEPTION 'SKU sequence overflow for prefix %. Maximum 46,656 products per prefix combination.', v_prefix;\n    END IF;\n\n    -- -------------------------------------------------------\n    -- Step 5: Convert integer to 3-character Base-36 string\n    -- Examples: 0 -> '000', 10 -> '00A', 35 -> '00Z', 36 -> '010'\n    -- -------------------------------------------------------\n    v_quotient := v_new_seq;\n    v_suffix := '';\n\n    -- Build the Base-36 string from least significant to most significant digit\n    FOR i IN 1..3 LOOP\n        v_remainder := v_quotient % 36;\n        v_suffix := SUBSTRING(v_base36_chars FROM (v_remainder + 1) FOR 1) || v_suffix;\n        v_quotient := v_quotient / 36;\n    END LOOP;\n\n    -- -------------------------------------------------------\n    -- Step 6: Compose the final 10-character SKU\n    -- -------------------------------------------------------\n    NEW.sku := v_prefix || v_suffix;\n    NEW.sequence_num := v_new_seq;\n\n    RETURN NEW;\nEND;\n$$ LANGUAGE plpgsql;\n\n-- Create the BEFORE INSERT trigger\nCREATE TRIGGER trg_generate_sku\n    BEFORE INSERT ON products\n    FOR EACH ROW\n    EXECUTE FUNCTION generate_product_sku();\n"
+        },
+        {
+          "filename": "005_manufacturing_tables.sql",
+          "content": "-- ============================================================\n-- AMARA ERP/MIS - Migration 005: Manufacturing & M2M Tables\n-- Dices and their mappings to SKU attributes\n-- ============================================================\n\n-- Dices table\nCREATE TABLE IF NOT EXISTS dices (\n    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),\n    dice_number VARCHAR(50) NOT NULL UNIQUE,\n    dice_type VARCHAR(100) NOT NULL,\n    description TEXT,\n    is_active BOOLEAN DEFAULT TRUE,\n    created_at TIMESTAMPTZ DEFAULT NOW(),\n    updated_at TIMESTAMPTZ DEFAULT NOW()\n);\n\nCREATE INDEX IF NOT EXISTS idx_dices_number ON dices(dice_number);\nCREATE INDEX IF NOT EXISTS idx_dices_type ON dices(dice_type);\n\n-- Many-to-Many: Dice <-> Motif mapping\nCREATE TABLE IF NOT EXISTS dice_motif_mapping (\n    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),\n    dice_id UUID NOT NULL REFERENCES dices(id) ON DELETE CASCADE,\n    motif_id UUID NOT NULL REFERENCES sku_motif(id) ON DELETE CASCADE,\n    created_at TIMESTAMPTZ DEFAULT NOW(),\n    UNIQUE(dice_id, motif_id)\n);\n\nCREATE INDEX IF NOT EXISTS idx_dice_motif_dice ON dice_motif_mapping(dice_id);\nCREATE INDEX IF NOT EXISTS idx_dice_motif_motif ON dice_motif_mapping(motif_id);\n\n-- Many-to-Many: Dice <-> Locking mapping\nCREATE TABLE IF NOT EXISTS dice_locking_mapping (\n    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),\n    dice_id UUID NOT NULL REFERENCES dices(id) ON DELETE CASCADE,\n    locking_id UUID NOT NULL REFERENCES sku_locking(id) ON DELETE CASCADE,\n    created_at TIMESTAMPTZ DEFAULT NOW(),\n    UNIQUE(dice_id, locking_id)\n);\n\nCREATE INDEX IF NOT EXISTS idx_dice_locking_dice ON dice_locking_mapping(dice_id);\nCREATE INDEX IF NOT EXISTS idx_dice_locking_locking ON dice_locking_mapping(locking_id);\n"
+        },
+        {
+          "filename": "006_production_tables.sql",
+          "content": "-- ============================================================\n-- AMARA ERP/MIS - Migration 006: Production & QC Tables\n-- Job Cards and Quality Control Logs\n-- ============================================================\n\n-- Job Cards table\nCREATE TABLE IF NOT EXISTS job_cards (\n    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),\n    product_id UUID NOT NULL REFERENCES products(id) ON DELETE RESTRICT,\n    job_card_number VARCHAR(50) NOT NULL UNIQUE,\n    target_qty INTEGER NOT NULL CHECK (target_qty > 0),\n    completed_qty INTEGER DEFAULT 0,\n    assigned_artisan_id UUID REFERENCES users(id) ON DELETE SET NULL,\n    status VARCHAR(30) NOT NULL DEFAULT 'pending'\n        CHECK (status IN ('pending', 'in_progress', 'completed', 'on_hold', 'cancelled')),\n    priority VARCHAR(20) DEFAULT 'normal'\n        CHECK (priority IN ('low', 'normal', 'high', 'urgent')),\n    start_date DATE,\n    due_date DATE,\n    notes TEXT,\n    created_at TIMESTAMPTZ DEFAULT NOW(),\n    updated_at TIMESTAMPTZ DEFAULT NOW()\n);\n\nCREATE INDEX IF NOT EXISTS idx_job_cards_product ON job_cards(product_id);\nCREATE INDEX IF NOT EXISTS idx_job_cards_artisan ON job_cards(assigned_artisan_id);\nCREATE INDEX IF NOT EXISTS idx_job_cards_status ON job_cards(status);\nCREATE INDEX IF NOT EXISTS idx_job_cards_number ON job_cards(job_card_number);\n\n-- QC Logs table\nCREATE TABLE IF NOT EXISTS qc_logs (\n    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),\n    job_card_id UUID NOT NULL REFERENCES job_cards(id) ON DELETE CASCADE,\n    inspected_by UUID REFERENCES users(id) ON DELETE SET NULL,\n    qty_passed INTEGER NOT NULL DEFAULT 0 CHECK (qty_passed >= 0),\n    qty_failed INTEGER NOT NULL DEFAULT 0 CHECK (qty_failed >= 0),\n    defect_reason TEXT,\n    inspection_date TIMESTAMPTZ DEFAULT NOW(),\n    notes TEXT,\n    created_at TIMESTAMPTZ DEFAULT NOW()\n);\n\nCREATE INDEX IF NOT EXISTS idx_qc_logs_job_card ON qc_logs(job_card_id);\nCREATE INDEX IF NOT EXISTS idx_qc_logs_inspector ON qc_logs(inspected_by);\n"
+        },
+        {
+          "filename": "007_inventory_production.sql",
+          "content": "-- ============================================================\n-- AMARA ERP/MIS - Migration 007: Inventory & Production Details\n-- Inventory with pricing, Production with material tracking\n-- ============================================================\n\n-- Inventory table (with prices)\nCREATE TABLE IF NOT EXISTS inventory (\n    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),\n    product_id UUID NOT NULL REFERENCES products(id) ON DELETE RESTRICT,\n    stock_qty INTEGER NOT NULL DEFAULT 0 CHECK (stock_qty >= 0),\n    reserved_qty INTEGER NOT NULL DEFAULT 0 CHECK (reserved_qty >= 0),\n    unit_cost DECIMAL(12, 2) DEFAULT 0.00,\n    selling_price DECIMAL(12, 2) DEFAULT 0.00,\n    mrp DECIMAL(12, 2) DEFAULT 0.00,\n    weight_grams DECIMAL(10, 3),\n    location VARCHAR(100),\n    last_restocked_at TIMESTAMPTZ,\n    created_at TIMESTAMPTZ DEFAULT NOW(),\n    updated_at TIMESTAMPTZ DEFAULT NOW(),\n    UNIQUE(product_id)\n);\n\nCREATE INDEX IF NOT EXISTS idx_inventory_product ON inventory(product_id);\nCREATE INDEX IF NOT EXISTS idx_inventory_location ON inventory(location);\n\n-- Production table (with material assigned)\nCREATE TABLE IF NOT EXISTS production (\n    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),\n    job_card_id UUID NOT NULL REFERENCES job_cards(id) ON DELETE CASCADE,\n    material_assigned VARCHAR(200),\n    material_weight_grams DECIMAL(10, 3),\n    material_cost DECIMAL(12, 2),\n    wastage_grams DECIMAL(10, 3) DEFAULT 0,\n    production_date DATE DEFAULT CURRENT_DATE,\n    completion_date DATE,\n    status VARCHAR(30) NOT NULL DEFAULT 'allocated'\n        CHECK (status IN ('allocated', 'in_process', 'finished', 'rejected')),\n    notes TEXT,\n    created_at TIMESTAMPTZ DEFAULT NOW(),\n    updated_at TIMESTAMPTZ DEFAULT NOW()\n);\n\nCREATE INDEX IF NOT EXISTS idx_production_job_card ON production(job_card_id);\nCREATE INDEX IF NOT EXISTS idx_production_status ON production(status);\nCREATE INDEX IF NOT EXISTS idx_production_date ON production(production_date);\n"
+        },
+        {
+          "filename": "008_enable_rls.sql",
+          "content": "-- ============================================================\n-- AMARA ERP/MIS - Migration 008: Enable Row Level Security\n-- RLS enabled on all tables (policies to be added later)\n-- ============================================================\n\nALTER TABLE sku_face_value ENABLE ROW LEVEL SECURITY;\nALTER TABLE sku_category ENABLE ROW LEVEL SECURITY;\nALTER TABLE sku_material ENABLE ROW LEVEL SECURITY;\nALTER TABLE sku_motif ENABLE ROW LEVEL SECURITY;\nALTER TABLE sku_finding ENABLE ROW LEVEL SECURITY;\nALTER TABLE sku_locking ENABLE ROW LEVEL SECURITY;\nALTER TABLE sku_size ENABLE ROW LEVEL SECURITY;\nALTER TABLE users ENABLE ROW LEVEL SECURITY;\nALTER TABLE products ENABLE ROW LEVEL SECURITY;\nALTER TABLE dices ENABLE ROW LEVEL SECURITY;\nALTER TABLE dice_motif_mapping ENABLE ROW LEVEL SECURITY;\nALTER TABLE dice_locking_mapping ENABLE ROW LEVEL SECURITY;\nALTER TABLE job_cards ENABLE ROW LEVEL SECURITY;\nALTER TABLE qc_logs ENABLE ROW LEVEL SECURITY;\nALTER TABLE inventory ENABLE ROW LEVEL SECURITY;\nALTER TABLE production ENABLE ROW LEVEL SECURITY;\n\n-- ============================================================\n-- Permissive policies for the postgres role (backend access)\n-- These allow full CRUD for authenticated backend connections\n-- ============================================================\n\nDO $$\nDECLARE\n    t TEXT;\nBEGIN\n    FOR t IN\n        SELECT unnest(ARRAY[\n            'sku_face_value', 'sku_category', 'sku_material', 'sku_motif',\n            'sku_finding', 'sku_locking', 'sku_size', 'users', 'products',\n            'dices', 'dice_motif_mapping', 'dice_locking_mapping',\n            'job_cards', 'qc_logs', 'inventory', 'production'\n        ])\n    LOOP\n        EXECUTE format('DROP POLICY IF EXISTS allow_all_%s ON %I', t, t);\n        EXECUTE format(\n            'CREATE POLICY allow_all_%s ON %I FOR ALL TO postgres USING (true) WITH CHECK (true)',\n            t, t\n        );\n    END LOOP;\nEND;\n$$;\n"
+        },
+        {
+          "filename": "009_seed_data.sql",
+          "content": "-- ============================================================\n-- AMARA ERP/MIS - Migration 009: Seed Data\n-- Sample data for all lookup tables and test records\n-- ============================================================\n\n-- SKU Face Value (0-9, A-Z representing value ranges)\nINSERT INTO sku_face_value (name, code, description) VALUES\n    ('Economy', '0', 'Economy range - under 1000'),\n    ('Standard', '1', 'Standard range - 1000-5000'),\n    ('Premium', '2', 'Premium range - 5000-15000'),\n    ('Luxury', '3', 'Luxury range - 15000-50000'),\n    ('Ultra Luxury', '4', 'Ultra luxury range - 50000+'),\n    ('Bridal', '5', 'Bridal collection'),\n    ('Festive', '6', 'Festive/seasonal collection'),\n    ('Heritage', '7', 'Heritage/antique collection'),\n    ('Contemporary', '8', 'Contemporary modern collection'),\n    ('Limited Edition', '9', 'Limited edition pieces')\nON CONFLICT (code) DO NOTHING;\n\n-- SKU Category\nINSERT INTO sku_category (name, code, description) VALUES\n    ('Bugadi', 'B', 'Traditional nose ring'),\n    ('Nath', 'N', 'Nose ring with chain'),\n    ('Jhumka', 'J', 'Bell-shaped earring'),\n    ('Kada', 'K', 'Rigid bangle'),\n    ('Pendant', 'P', 'Necklace pendant'),\n    ('Ring', 'R', 'Finger ring'),\n    ('Anklet', 'A', 'Ankle bracelet'),\n    ('Choker', 'C', 'Short necklace'),\n    ('Mangalsutra', 'M', 'Wedding necklace'),\n    ('Tikka', 'T', 'Forehead ornament')\nON CONFLICT (code) DO NOTHING;\n\n-- SKU Material\nINSERT INTO sku_material (name, code, description) VALUES\n    ('Silver 925', 'S', 'Sterling silver 925'),\n    ('Gold 22K', 'G', 'Gold 22 karat'),\n    ('Gold 18K', 'H', 'Gold 18 karat'),\n    ('Platinum', 'P', 'Platinum 950'),\n    ('Rose Gold', 'R', 'Rose gold 18K'),\n    ('Brass', 'B', 'Brass alloy'),\n    ('Copper', 'C', 'Pure copper'),\n    ('White Gold', 'W', 'White gold 18K')\nON CONFLICT (code) DO NOTHING;\n\n-- SKU Motif\nINSERT INTO sku_motif (name, code, description) VALUES\n    ('Floral', 'F', 'Flower and petal designs'),\n    ('Geometric', 'G', 'Geometric patterns'),\n    ('Paisley', 'P', 'Traditional paisley motif'),\n    ('Temple', 'T', 'Temple-inspired design'),\n    ('Peacock', 'K', 'Peacock feather motif'),\n    ('Abstract', 'A', 'Modern abstract design'),\n    ('Vine', 'V', 'Vine and leaf patterns'),\n    ('Mandala', 'M', 'Sacred mandala design'),\n    ('Filigree', 'I', 'Intricate filigree work'),\n    ('None', 'X', 'No motif / plain')\nON CONFLICT (code) DO NOTHING;\n\n-- SKU Finding\nINSERT INTO sku_finding (name, code, description) VALUES\n    ('NA', 'X', 'Not applicable'),\n    ('Post', 'P', 'Post/stud back'),\n    ('Hook', 'H', 'Hook/wire back'),\n    ('Clip', 'C', 'Clip-on back'),\n    ('Lever', 'L', 'Lever back'),\n    ('Lobster', 'B', 'Lobster claw clasp'),\n    ('Spring', 'S', 'Spring ring clasp'),\n    ('Toggle', 'T', 'Toggle clasp'),\n    ('Magnetic', 'M', 'Magnetic clasp')\nON CONFLICT (code) DO NOTHING;\n\n-- SKU Locking\nINSERT INTO sku_locking (name, code, description) VALUES\n    ('Screw', 'S', 'Screw-back locking'),\n    ('Push', 'P', 'Push-back locking'),\n    ('Hook', 'H', 'Hook locking'),\n    ('Snap', 'N', 'Snap-fit locking'),\n    ('Hinge', 'I', 'Hinge locking'),\n    ('None', 'X', 'No locking mechanism'),\n    ('Clasp', 'C', 'Clasp locking'),\n    ('Pin', 'D', 'Pin-based locking')\nON CONFLICT (code) DO NOTHING;\n\n-- SKU Size\nINSERT INTO sku_size (name, code, description) VALUES\n    ('Extra Small', 'T', 'XS - Tiny'),\n    ('Small', 'S', 'Small size'),\n    ('Medium', 'M', 'Medium size'),\n    ('Large', 'L', 'Large size'),\n    ('Extra Large', 'X', 'XL size'),\n    ('Free Size', 'F', 'One size fits all'),\n    ('Custom', 'C', 'Custom sizing'),\n    ('Adjustable', 'A', 'Adjustable size')\nON CONFLICT (code) DO NOTHING;\n\n-- Sample Users (Artisans)\nINSERT INTO users (name, email, role, phone) VALUES\n    ('Rajesh Kumar', 'rajesh@amara.com', 'artisan', '+91-9876543210'),\n    ('Priya Sharma', 'priya@amara.com', 'artisan', '+91-9876543211'),\n    ('Amit Patel', 'amit@amara.com', 'supervisor', '+91-9876543212'),\n    ('Sunita Devi', 'sunita@amara.com', 'artisan', '+91-9876543213'),\n    ('Vikram Singh', 'vikram@amara.com', 'qc_inspector', '+91-9876543214'),\n    ('Meera Joshi', 'meera@amara.com', 'admin', '+91-9876543215')\nON CONFLICT (email) DO NOTHING;\n\n-- Sample Dices\nINSERT INTO dices (dice_number, dice_type, description) VALUES\n    ('D-101', 'stamping', 'Floral stamping die for bugadi'),\n    ('D-102', 'casting', 'Casting mold for jhumka bells'),\n    ('D-103', 'embossing', 'Paisley embossing die'),\n    ('D-104', 'cutting', 'Geometric cutting die for pendants'),\n    ('D-105', 'stamping', 'Temple motif stamping die'),\n    ('D-106', 'filigree', 'Filigree wire shaping die')\nON CONFLICT (dice_number) DO NOTHING;\n"
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "Sample face_value",
+      "endpoint": "lookups/face_value",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": [
+        {
+          "id": "ec802608-4183-415a-8c0f-a62f62485c82",
+          "name": "Economy",
+          "code": "0",
+          "description": "Economy range - under 1000",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "3185bf1d-b1f3-4c59-b025-512b6eda138c",
+          "name": "Standard",
+          "code": "1",
+          "description": "Standard range - 1000-5000",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "70033e3a-646b-4191-98ee-1b0dcbd94d51",
+          "name": "Premium",
+          "code": "2",
+          "description": "Premium range - 5000-15000",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "1664c852-2a1b-4099-90d7-71b534c5020f",
+          "name": "Luxury",
+          "code": "3",
+          "description": "Luxury range - 15000-50000",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "8312590e-0b77-40ae-a5b9-590c0b7678f2",
+          "name": "Ultra Luxury",
+          "code": "4",
+          "description": "Ultra luxury range - 50000+",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "dd559a1a-8887-4274-bf59-91408f1ed7bc",
+          "name": "Bridal",
+          "code": "5",
+          "description": "Bridal collection",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "65dce159-dd8c-49e0-b5a0-017af25d29f1",
+          "name": "Festive",
+          "code": "6",
+          "description": "Festive/seasonal collection",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "f20d5a18-1a95-4930-8f96-24060b6f2717",
+          "name": "Heritage",
+          "code": "7",
+          "description": "Heritage/antique collection",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "b4f1952d-ebad-456c-ae32-d2b984c1f083",
+          "name": "Contemporary",
+          "code": "8",
+          "description": "Contemporary modern collection",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "3653e655-35f1-4d3d-b1db-42d81ffec25e",
+          "name": "Limited Edition",
+          "code": "9",
+          "description": "Limited edition pieces",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "Sample category",
+      "endpoint": "lookups/category",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": [
+        {
+          "id": "b2b457f5-6097-403e-aff9-1b045ebef216",
+          "name": "Anklet",
+          "code": "A",
+          "description": "Ankle bracelet",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "012f9a2a-bd46-49d4-b821-c3faf70f2352",
+          "name": "Bugadi",
+          "code": "B",
+          "description": "Traditional nose ring",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "f8059126-9a2d-436d-8323-1da7da98df2f",
+          "name": "Choker",
+          "code": "C",
+          "description": "Short necklace",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "55b30115-0539-45f4-b6f2-f63a25fcfc51",
+          "name": "Jhumka",
+          "code": "J",
+          "description": "Bell-shaped earring",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "ea638c42-6e0d-4b8e-9177-2d23d4ac6453",
+          "name": "Kada",
+          "code": "K",
+          "description": "Rigid bangle",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "f8d252cc-95eb-4d65-b54e-e461c976aacd",
+          "name": "Mangalsutra",
+          "code": "M",
+          "description": "Wedding necklace",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "2ca9f59c-c61c-4d07-9fa4-6f89dffc1813",
+          "name": "Nath",
+          "code": "N",
+          "description": "Nose ring with chain",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "9b5737a7-0f14-4aeb-b99f-46c87fa4f435",
+          "name": "Pendant",
+          "code": "P",
+          "description": "Necklace pendant",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "be09e3e7-aa6e-41d5-a5e1-1d88aad6556e",
+          "name": "Ring",
+          "code": "R",
+          "description": "Finger ring",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "565fb47f-893b-44ce-94b2-3346827294f7",
+          "name": "Tikka",
+          "code": "T",
+          "description": "Forehead ornament",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "Sample material",
+      "endpoint": "lookups/material",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": [
+        {
+          "id": "f4ccd86a-e216-4647-85e3-350c3566e5c4",
+          "name": "Brass",
+          "code": "B",
+          "description": "Brass alloy",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "9376748d-e299-48c4-b654-59ef8b09bb05",
+          "name": "Copper",
+          "code": "C",
+          "description": "Pure copper",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "97469ed2-211c-4ab5-a866-8445ed25376d",
+          "name": "Gold 22K",
+          "code": "G",
+          "description": "Gold 22 karat",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "b9847efc-04aa-4cc3-9551-52d8c5834bed",
+          "name": "Gold 18K",
+          "code": "H",
+          "description": "Gold 18 karat",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "6e81eb45-c3fd-4199-9f6d-60762194e7e0",
+          "name": "Platinum",
+          "code": "P",
+          "description": "Platinum 950",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "dc89d3b9-0c3b-4252-a120-9010115683d4",
+          "name": "Rose Gold",
+          "code": "R",
+          "description": "Rose gold 18K",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "9a572b70-84ef-44b8-8407-05a011f0df19",
+          "name": "Silver 925",
+          "code": "S",
+          "description": "Sterling silver 925",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "d019126e-3abd-4212-b086-5dcbeb024dc2",
+          "name": "White Gold",
+          "code": "W",
+          "description": "White gold 18K",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "Sample motif",
+      "endpoint": "lookups/motif",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": [
+        {
+          "id": "5f1e8715-cadb-4463-bdbc-dc4fa4827238",
+          "name": "Abstract",
+          "code": "A",
+          "description": "Modern abstract design",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "d9a91c8d-df82-4e10-af71-c1d226ad11fa",
+          "name": "Floral",
+          "code": "F",
+          "description": "Flower and petal designs",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "b9bef783-051e-429a-ad9a-2a622c4650db",
+          "name": "Geometric",
+          "code": "G",
+          "description": "Geometric patterns",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "856e9fa2-115b-468f-a600-86fa51376f5e",
+          "name": "Filigree",
+          "code": "I",
+          "description": "Intricate filigree work",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "06074a6c-c5e0-439c-a898-7b31193c9fc9",
+          "name": "Peacock",
+          "code": "K",
+          "description": "Peacock feather motif",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "1fb249ec-2de8-41ca-9b1f-aef299d22f1c",
+          "name": "Mandala",
+          "code": "M",
+          "description": "Sacred mandala design",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "90aa6ef7-f161-419e-bb82-d174062317e7",
+          "name": "Paisley",
+          "code": "P",
+          "description": "Traditional paisley motif",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "bc339171-9d14-4a16-93d7-eff533e62d7f",
+          "name": "Temple",
+          "code": "T",
+          "description": "Temple-inspired design",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "60e4bcd4-97e9-427b-9926-9ee29f3df2a8",
+          "name": "Vine",
+          "code": "V",
+          "description": "Vine and leaf patterns",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "0f0ecad5-2c4d-466f-94a8-9b15499c19b4",
+          "name": "None",
+          "code": "X",
+          "description": "No motif / plain",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "Sample finding",
+      "endpoint": "lookups/finding",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": [
+        {
+          "id": "80b9fb1b-0ff5-4d6b-8169-ff7610095bbd",
+          "name": "Lobster",
+          "code": "B",
+          "description": "Lobster claw clasp",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "309b988b-1714-4626-aeea-c64c1fc33873",
+          "name": "Clip",
+          "code": "C",
+          "description": "Clip-on back",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "814d6ddf-2f3f-4337-9f7c-ebc13fba24bd",
+          "name": "Hook",
+          "code": "H",
+          "description": "Hook/wire back",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "4fcc3b3f-a6fa-4071-b342-c27cda12637e",
+          "name": "Lever",
+          "code": "L",
+          "description": "Lever back",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "c0b19dc0-72f4-4cb3-b609-38218dfc4fce",
+          "name": "Magnetic",
+          "code": "M",
+          "description": "Magnetic clasp",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "ae3dfa36-867e-46e6-8545-b7be9ef2a50b",
+          "name": "Post",
+          "code": "P",
+          "description": "Post/stud back",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "9f8413c1-7e34-4338-a74a-0b77e7c058e1",
+          "name": "Spring",
+          "code": "S",
+          "description": "Spring ring clasp",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "d541ba98-87d0-4aae-9b7c-fdb26f477ef9",
+          "name": "Toggle",
+          "code": "T",
+          "description": "Toggle clasp",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "3b3e45d0-6e1c-42cc-bcc9-794cbf072912",
+          "name": "NA",
+          "code": "X",
+          "description": "Not applicable",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "Sample locking",
+      "endpoint": "lookups/locking",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": [
+        {
+          "id": "1100c774-da37-4741-94a0-c70b3f8e57bd",
+          "name": "Clasp",
+          "code": "C",
+          "description": "Clasp locking",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "ec0361df-6d7b-4293-a10a-d2b8968f0ece",
+          "name": "Pin",
+          "code": "D",
+          "description": "Pin-based locking",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "908612b8-8a84-4487-81e5-c4ddcd36979a",
+          "name": "Hook",
+          "code": "H",
+          "description": "Hook locking",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "d577cbf9-6f90-42a3-b761-4a4f1aa93aaf",
+          "name": "Hinge",
+          "code": "I",
+          "description": "Hinge locking",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "0569ec26-9767-497e-b3d9-a0a52dce7808",
+          "name": "Snap",
+          "code": "N",
+          "description": "Snap-fit locking",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "2057b8be-51c1-4c82-a0eb-8f2d3166c2e2",
+          "name": "Push",
+          "code": "P",
+          "description": "Push-back locking",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "7778afb0-7d42-4faf-b672-5dc1b43ce289",
+          "name": "Screw",
+          "code": "S",
+          "description": "Screw-back locking",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "cf72b14b-f33f-405c-8df2-cc7aa7e860b2",
+          "name": "None",
+          "code": "X",
+          "description": "No locking mechanism",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "Sample size",
+      "endpoint": "lookups/size",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": [
+        {
+          "id": "513f9065-f431-42ff-b385-065ccf822503",
+          "name": "Adjustable",
+          "code": "A",
+          "description": "Adjustable size",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "85b38a28-4ed1-413d-ab8c-c0a36af89084",
+          "name": "Custom",
+          "code": "C",
+          "description": "Custom sizing",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "db87e6f4-9c03-42b7-a7b9-ce9e8214a84f",
+          "name": "Free Size",
+          "code": "F",
+          "description": "One size fits all",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "3c2ff1b2-71dd-4aaf-8182-7e2637198a96",
+          "name": "Large",
+          "code": "L",
+          "description": "Large size",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "adeb0f67-db25-426d-966d-3c67d9555f91",
+          "name": "Medium",
+          "code": "M",
+          "description": "Medium size",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "c5b6f783-2cb5-4749-b32e-50d7500eac78",
+          "name": "Small",
+          "code": "S",
+          "description": "Small size",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "03f45658-00a2-4907-820a-de2dc3296a39",
+          "name": "Extra Small",
+          "code": "T",
+          "description": "XS - Tiny",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        },
+        {
+          "id": "63fa999b-61d6-4309-9f49-3f09532cce29",
+          "name": "Extra Large",
+          "code": "X",
+          "description": "XL size",
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "SKU Preview Generation",
+      "endpoint": "sku/preview",
+      "method": "POST",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": {
+        "prefix": "0ABABCA",
+        "suffix": "000",
+        "full_sku": "0ABABCA000",
+        "next_sequence": 0,
+        "codes": [
+          "0",
+          "A",
+          "B",
+          "A",
+          "B",
+          "C",
+          "A"
+        ]
+      },
+      "error": null
+    },
+    {
+      "name": "Get Schema",
+      "endpoint": "schema",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": {
+        "dice_locking_mapping": [
+          {
+            "column": "id",
+            "type": "uuid",
+            "nullable": "NO",
+            "default": "gen_random_uuid()"
+          },
+          {
+            "column": "dice_id",
+            "type": "uuid",
+            "nullable": "NO",
+            "default": null
+          },
+          {
+            "column": "locking_id",
+            "type": "uuid",
+            "nullable": "NO",
+            "default": null
+          },
+          {
+            "column": "created_at",
+            "type": "timestamp with time zone",
+            "nullable": "YES",
+            "default": "now()"
+          }
+        ],
+        "dice_motif_mapping": [
+          {
+            "column": "id",
+            "type": "uuid",
+            "nullable": "NO",
+            "default": "gen_random_uuid()"
+          },
+          {
+            "column": "dice_id",
+            "type": "uuid",
+            "nullable": "NO",
+            "default": null
+          },
+          {
+            "column": "motif_id",
+            "type": "uuid",
+            "nullable": "NO",
+            "default": null
+          },
+          {
+            "column": "created_at",
+            "type": "timestamp with time zone",
+            "nullable": "YES",
+            "default": "now()"
+          }
+        ],
+        "dices": [
+          {
+            "column": "id",
+            "type": "uuid",
+            "nullable": "NO",
+            "default": "gen_random_uuid()"
+          },
+          {
+            "column": "dice_number",
+            "type": "character varying",
+            "nullable": "NO",
+            "default": null
+          },
+          {
+            "column": "dice_type",
+            "type": "character varying",
+            "nullable": "NO",
+            "default": null
+          },
+          {
+            "column": "description",
+            "type": "text",
+            "nullable": "YES",
+            "default": null
+          },
+          {
+            "column": "is_active",
+            "type": "boolean",
+            "nullable": "YES",
+            "default": "true"
+          },
+          {
+            "column": "created_at",
+            "type": "timestamp with time zone",
+            "nullable": "YES",
+            "default": "now()"
+          },
+          {
+            "column": "updated_at",
+            "type": "timestamp with time zone",
+            "nullable": "YES",
+            "default": "now()"
+          }
+        ],
+        "inventory": [
+          {
+            "column": "id",
+            "type": "uuid",
+            "nullable": "NO",
+            "default": "gen_random_uuid()"
+          },
+          {
+            "column": "product_id",
+            "type": "uuid",
+            "nullable": "NO",
+            "default": null
+          },
+          {
+            "column": "stock_qty",
+            "type": "integer",
+            "nullable": "NO",
+            "default": "0"
+          },
+          {
+            "column": "reserved_qty",
+            "type": "integer",
+            "nullable": "NO",
+            "default": "0"
+          },
+          {
+            "column": "unit_cost",
+            "type": "numeric",
+            "nullable": "YES",
+            "default": "0.00"
+          },
+          {
+            "column": "selling_price",
+            "type": "numeric",
+            "nullable": "YES",
+            "default": "0.00"
+          },
+          {
+            "column": "mrp",
+            "type": "numeric",
+            "nullable": "YES",
+            "default": "0.00"
+          },
+          {
+            "column": "weight_grams",
+            "type": "numeric",
+            "nullable": "YES",
+            "default": null
+          },
+          {
+            "column": "location",
+            "type": "character varying",
+            "nullable": "YES",
+            "default": null
+          },
+          {
+            "column": "last_restocked_at",
+            "type": "timestamp with time zone",
+            "nullable": "YES",
+            "default": null
+          },
+          {
+            "column": "created_at",
+            "type": "timestamp with time zone",
+            "nullable": "YES",
+            "default": "now()"
+          },
+          {
+            "column": "updated_at",
+            "type": "timestamp with time zone",
+            "nullable": "YES",
+            "default": "now()"
+          }
+        ],
+        "job_cards": [
+          {
+            "column": "id",
+            "type": "uuid",
+            "nullable": "NO",
+            "default": "gen_random_uuid()"
+          },
+          {
+            "column": "product_id",
+            "type": "uuid",
+            "nullable": "NO",
+            "default": null
+          },
+          {
+            "column": "job_card_number",
+            "type": "character varying",
+            "nullable": "NO",
+            "default": null
+          },
+          {
+            "column": "target_qty",
+            "type": "integer",
+            "nullable": "NO",
+            "default": null
+          },
+          {
+            "column": "completed_qty",
+            "type": "integer",
+            "nullable": "YES",
+            "default": "0"
+          },
+          {
+            "column": "assigned_artisan_id",
+            "type": "uuid",
+            "nullable": "YES",
+            "default": null
+          },
+          {
+            "column": "status",
+            "type": "character varying",
+            "nullable": "NO",
+            "default": "'pending'::character varying"
+          },
+          {
+            "column": "priority",
+            "type": "character varying",
+            "nullable": "YES",
+            "default": "'normal'::character varying"
+          },
+          {
+            "column": "start_date",
+            "type": "date",
+            "nullable": "YES",
+            "default": null
+          },
+          {
+            "column": "due_date",
+            "type": "date",
+            "nullable": "YES",
+            "default": null
+          },
+          {
+            "column": "notes",
+            "type": "text",
+            "nullable": "YES",
+            "default": null
+          },
+          {
+            "column": "created_at",
+            "type": "timestamp with time zone",
+            "nullable": "YES",
+            "default": "now()"
+          },
+          {
+            "column": "updated_at",
+            "type": "timestamp with time zone",
+            "nullable": "YES",
+            "default": "now()"
+          }
+        ],
+        "production": [
+          {
+            "column": "id",
+            "type": "uuid",
+            "nullable": "NO",
+            "default": "gen_random_uuid()"
+          },
+          {
+            "column": "job_card_id",
+            "type": "uuid",
+            "nullable": "NO",
+            "default": null
+          },
+          {
+            "column": "material_assigned",
+            "type": "character varying",
+            "nullable": "YES",
+            "default": null
+          },
+          {
+            "column": "material_weight_grams",
+            "type": "numeric",
+            "nullable": "YES",
+            "default": null
+          },
+          {
+            "column": "material_cost",
+            "type": "numeric",
+            "nullable": "YES",
+            "default": null
+          },
+          {
+            "column": "wastage_grams",
+            "type": "numeric",
+            "nullable": "YES",
+            "default": "0"
+          },
+          {
+            "column": "production_date",
+            "type": "date",
+            "nullable": "YES",
+            "default": "CURRENT_DATE"
+          },
+          {
+            "column": "completion_date",
+            "type": "date",
+            "nullable": "YES",
+            "default": null
+          },
+          {
+            "column": "status",
+            "type": "character varying",
+            "nullable": "NO",
+            "default": "'allocated'::character varying"
+          },
+          {
+            "column": "notes",
+            "type": "text",
+            "nullable": "YES",
+            "default": null
+          },
+          {
+            "column": "created_at",
+            "type": "timestamp with time zone",
+            "nullable": "YES",
+            "default": "now()"
+          },
+          {
+            "column": "updated_at",
+            "type": "timestamp with time zone",
+            "nullable": "YES",
+            "default": "now()"
+          }
+        ],
+        "products": [
+          {
+            "column": "id",
+            "type": "uuid",
+            "nullable": "NO",
+            "default": "gen_random_uuid()"
+          },
+          {
+            "column": "name",
+            "type": "character varying",
+            "nullable": "NO",
+            "default": null
+          },
+          {
+            "column": "description",
+            "type": "text",
+            "nullable": "YES",
+            "default": null
+          },
+          {
+            "column": "face_value_id",
+            "type": "uuid",
+            "nullable": "NO",
+            "default": null
+          },
+          {
+            "column": "category_id",
+            "type": "uuid",
+            "nullable": "NO",
+            "default": null
+          },
+          {
+            "column": "material_id",
+            "type": "uuid",
+            "nullable": "NO",
+            "default": null
+          },
+          {
+            "column": "motif_id",
+            "type": "uuid",
+            "nullable": "NO",
+            "default": null
+          },
+          {
+            "column": "finding_id",
+            "type": "uuid",
+            "nullable": "NO",
+            "default": null
+          },
+          {
+            "column": "locking_id",
+            "type": "uuid",
+            "nullable": "NO",
+            "default": null
+          },
+          {
+            "column": "size_id",
+            "type": "uuid",
+            "nullable": "NO",
+            "default": null
+          },
+          {
+            "column": "sku",
+            "type": "character varying",
+            "nullable": "YES",
+            "default": null
+          },
+          {
+            "column": "sequence_num",
+            "type": "integer",
+            "nullable": "YES",
+            "default": null
+          },
+          {
+            "column": "is_active",
+            "type": "boolean",
+            "nullable": "YES",
+            "default": "true"
+          },
+          {
+            "column": "created_at",
+            "type": "timestamp with time zone",
+            "nullable": "YES",
+            "default": "now()"
+          },
+          {
+            "column": "updated_at",
+            "type": "timestamp with time zone",
+            "nullable": "YES",
+            "default": "now()"
+          }
+        ],
+        "qc_logs": [
+          {
+            "column": "id",
+            "type": "uuid",
+            "nullable": "NO",
+            "default": "gen_random_uuid()"
+          },
+          {
+            "column": "job_card_id",
+            "type": "uuid",
+            "nullable": "NO",
+            "default": null
+          },
+          {
+            "column": "inspected_by",
+            "type": "uuid",
+            "nullable": "YES",
+            "default": null
+          },
+          {
+            "column": "qty_passed",
+            "type": "integer",
+            "nullable": "NO",
+            "default": "0"
+          },
+          {
+            "column": "qty_failed",
+            "type": "integer",
+            "nullable": "NO",
+            "default": "0"
+          },
+          {
+            "column": "defect_reason",
+            "type": "text",
+            "nullable": "YES",
+            "default": null
+          },
+          {
+            "column": "inspection_date",
+            "type": "timestamp with time zone",
+            "nullable": "YES",
+            "default": "now()"
+          },
+          {
+            "column": "notes",
+            "type": "text",
+            "nullable": "YES",
+            "default": null
+          },
+          {
+            "column": "created_at",
+            "type": "timestamp with time zone",
+            "nullable": "YES",
+            "default": "now()"
+          }
+        ],
+        "sku_category": [
+          {
+            "column": "id",
+            "type": "uuid",
+            "nullable": "NO",
+            "default": "gen_random_uuid()"
+          },
+          {
+            "column": "name",
+            "type": "character varying",
+            "nullable": "NO",
+            "default": null
+          },
+          {
+            "column": "code",
+            "type": "character",
+            "nullable": "NO",
+            "default": null
+          },
+          {
+            "column": "description",
+            "type": "text",
+            "nullable": "YES",
+            "default": null
+          },
+          {
+            "column": "created_at",
+            "type": "timestamp with time zone",
+            "nullable": "YES",
+            "default": "now()"
+          },
+          {
+            "column": "updated_at",
+            "type": "timestamp with time zone",
+            "nullable": "YES",
+            "default": "now()"
+          }
+        ],
+        "sku_face_value": [
+          {
+            "column": "id",
+            "type": "uuid",
+            "nullable": "NO",
+            "default": "gen_random_uuid()"
+          },
+          {
+            "column": "name",
+            "type": "character varying",
+            "nullable": "NO",
+            "default": null
+          },
+          {
+            "column": "code",
+            "type": "character",
+            "nullable": "NO",
+            "default": null
+          },
+          {
+            "column": "description",
+            "type": "text",
+            "nullable": "YES",
+            "default": null
+          },
+          {
+            "column": "created_at",
+            "type": "timestamp with time zone",
+            "nullable": "YES",
+            "default": "now()"
+          },
+          {
+            "column": "updated_at",
+            "type": "timestamp with time zone",
+            "nullable": "YES",
+            "default": "now()"
+          }
+        ],
+        "sku_finding": [
+          {
+            "column": "id",
+            "type": "uuid",
+            "nullable": "NO",
+            "default": "gen_random_uuid()"
+          },
+          {
+            "column": "name",
+            "type": "character varying",
+            "nullable": "NO",
+            "default": null
+          },
+          {
+            "column": "code",
+            "type": "character",
+            "nullable": "NO",
+            "default": null
+          },
+          {
+            "column": "description",
+            "type": "text",
+            "nullable": "YES",
+            "default": null
+          },
+          {
+            "column": "created_at",
+            "type": "timestamp with time zone",
+            "nullable": "YES",
+            "default": "now()"
+          },
+          {
+            "column": "updated_at",
+            "type": "timestamp with time zone",
+            "nullable": "YES",
+            "default": "now()"
+          }
+        ],
+        "sku_locking": [
+          {
+            "column": "id",
+            "type": "uuid",
+            "nullable": "NO",
+            "default": "gen_random_uuid()"
+          },
+          {
+            "column": "name",
+            "type": "character varying",
+            "nullable": "NO",
+            "default": null
+          },
+          {
+            "column": "code",
+            "type": "character",
+            "nullable": "NO",
+            "default": null
+          },
+          {
+            "column": "description",
+            "type": "text",
+            "nullable": "YES",
+            "default": null
+          },
+          {
+            "column": "created_at",
+            "type": "timestamp with time zone",
+            "nullable": "YES",
+            "default": "now()"
+          },
+          {
+            "column": "updated_at",
+            "type": "timestamp with time zone",
+            "nullable": "YES",
+            "default": "now()"
+          }
+        ],
+        "sku_material": [
+          {
+            "column": "id",
+            "type": "uuid",
+            "nullable": "NO",
+            "default": "gen_random_uuid()"
+          },
+          {
+            "column": "name",
+            "type": "character varying",
+            "nullable": "NO",
+            "default": null
+          },
+          {
+            "column": "code",
+            "type": "character",
+            "nullable": "NO",
+            "default": null
+          },
+          {
+            "column": "description",
+            "type": "text",
+            "nullable": "YES",
+            "default": null
+          },
+          {
+            "column": "created_at",
+            "type": "timestamp with time zone",
+            "nullable": "YES",
+            "default": "now()"
+          },
+          {
+            "column": "updated_at",
+            "type": "timestamp with time zone",
+            "nullable": "YES",
+            "default": "now()"
+          }
+        ],
+        "sku_motif": [
+          {
+            "column": "id",
+            "type": "uuid",
+            "nullable": "NO",
+            "default": "gen_random_uuid()"
+          },
+          {
+            "column": "name",
+            "type": "character varying",
+            "nullable": "NO",
+            "default": null
+          },
+          {
+            "column": "code",
+            "type": "character",
+            "nullable": "NO",
+            "default": null
+          },
+          {
+            "column": "description",
+            "type": "text",
+            "nullable": "YES",
+            "default": null
+          },
+          {
+            "column": "created_at",
+            "type": "timestamp with time zone",
+            "nullable": "YES",
+            "default": "now()"
+          },
+          {
+            "column": "updated_at",
+            "type": "timestamp with time zone",
+            "nullable": "YES",
+            "default": "now()"
+          }
+        ],
+        "sku_size": [
+          {
+            "column": "id",
+            "type": "uuid",
+            "nullable": "NO",
+            "default": "gen_random_uuid()"
+          },
+          {
+            "column": "name",
+            "type": "character varying",
+            "nullable": "NO",
+            "default": null
+          },
+          {
+            "column": "code",
+            "type": "character",
+            "nullable": "NO",
+            "default": null
+          },
+          {
+            "column": "description",
+            "type": "text",
+            "nullable": "YES",
+            "default": null
+          },
+          {
+            "column": "created_at",
+            "type": "timestamp with time zone",
+            "nullable": "YES",
+            "default": "now()"
+          },
+          {
+            "column": "updated_at",
+            "type": "timestamp with time zone",
+            "nullable": "YES",
+            "default": "now()"
+          }
+        ],
+        "users": [
+          {
+            "column": "id",
+            "type": "uuid",
+            "nullable": "NO",
+            "default": "gen_random_uuid()"
+          },
+          {
+            "column": "name",
+            "type": "character varying",
+            "nullable": "NO",
+            "default": null
+          },
+          {
+            "column": "email",
+            "type": "character varying",
+            "nullable": "NO",
+            "default": null
+          },
+          {
+            "column": "role",
+            "type": "character varying",
+            "nullable": "NO",
+            "default": "'artisan'::character varying"
+          },
+          {
+            "column": "phone",
+            "type": "character varying",
+            "nullable": "YES",
+            "default": null
+          },
+          {
+            "column": "is_active",
+            "type": "boolean",
+            "nullable": "YES",
+            "default": "true"
+          },
+          {
+            "column": "created_at",
+            "type": "timestamp with time zone",
+            "nullable": "YES",
+            "default": "now()"
+          },
+          {
+            "column": "updated_at",
+            "type": "timestamp with time zone",
+            "nullable": "YES",
+            "default": "now()"
+          }
+        ]
+      },
+      "error": null
+    }
+  ]
+}
