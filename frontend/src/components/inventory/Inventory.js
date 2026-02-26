@@ -63,8 +63,10 @@ export default function Inventory() {
           <h1 className="text-4xl font-heading font-bold tracking-tight">Inventory</h1>
           <p className="text-neutral-500 mt-1 text-sm">Stock levels, pricing, and warehouse management</p>
         </div>
-        <button
-          data-testid="add-inventory-btn"
+        <div className="flex items-center gap-3">
+          <ExportButton entity="inventory" />
+          <button
+            data-testid="add-inventory-btn"
           onClick={() => setShowForm(!showForm)}
           className="flex items-center gap-1.5 px-6 py-3 bg-gold text-black text-xs uppercase tracking-wider font-semibold hover:bg-gold-dark transition-colors"
         >
