@@ -150,27 +150,79 @@ class AMARAAPITester:
                         print(f"      ... and {len(response) - 3} more")
 
     def test_products(self):
-        """Test products endpoints"""
+        """Test products endpoints including new CRUD and search features"""
         print("\n" + "="*50)
-        print("TESTING PRODUCTS")
+        print("TESTING PRODUCTS (CRUD + SEARCH + PAGINATION)")
         print("="*50)
         
-        success, response = self.run_test("Get Products", "GET", "products", 200,
-                                        description="Retrieve all products with SKUs")
+        # Test paginated products endpoint
+        success, response = self.run_test("Get Products (Paginated)", "GET", "products", 200,
+                                        description="Retrieve products with new paginated structure")
         if success:
-            print(f"   📦 Found {len(response)} products")
-            expected_skus = ['0BSFXSS000', '0BSFXSS001']
-            found_skus = [p.get('sku') for p in response if p.get('sku')]
+            # Check new paginated structure
+            required_keys = ['items', 'total', 'page', 'page_size', 'total_pages']
+            missing_keys = [key for key in required_keys if key not in response]
+            if missing_keys:
+                print(f"   ❌ Missing pagination keys: {missing_keys}")
+            else:
+                print(f"   ✅ Paginated structure confirmed")
+                print(f"   📦 Found {response['total']} total products, page {response['page']}/{response['total_pages']}")
+                
+                items = response.get('items', [])
+                for product in items:
+                    print(f"      [{product.get('sku', 'No SKU')}] {product.get('name', 'Unnamed')}")
+        
+        # Test pagination with specific page size
+        success, response = self.run_test("Products Pagination", "GET", "products?page=1&page_size=5", 200,
+                                        description="Test pagination with page_size=5")
+        if success:
+            items = response.get('items', [])
+            page_size = response.get('page_size', 0)
+            print(f"   📄 Page size: {page_size}, Items returned: {len(items)}")
+        
+        # Test product search by name
+        success, response = self.run_test("Product Search by Name", "GET", "products?q=bugadi", 200,
+                                        description="Search products by 'bugadi' keyword")
+        if success:
+            items = response.get('items', [])
+            print(f"   🔍 Search 'bugadi' returned {len(items)} products")
+            for product in items:
+                name = product.get('name', '').lower()
+                sku = product.get('sku', '').lower()
+                if 'bugadi' in name or 'bugadi' in sku:
+                    print(f"   ✅ Match found: [{product.get('sku')}] {product.get('name')}")
+        
+        # Test product CRUD operations if we have products
+        if success and items:
+            product_id = items[0]['id']
+            original_name = items[0]['name']
             
-            for sku in expected_skus:
-                if sku in found_skus:
-                    print(f"   ✅ Found expected SKU: {sku}")
-                else:
-                    print(f"   ❌ Missing expected SKU: {sku}")
+            # Test UPDATE product
+            update_data = {
+                "name": "Updated Test Product",
+                "description": "Updated description for testing"
+            }
+            success, updated_product = self.run_test("Update Product", "PUT", f"products/{product_id}", 200,
+                                                   data=update_data,
+                                                   description="Test product name/description update")
+            if success:
+                print(f"   ✏️ Updated product: {updated_product.get('name')}")
+                
+                # Restore original name
+                restore_data = {"name": original_name}
+                self.run_test("Restore Product Name", "PUT", f"products/{product_id}", 200,
+                             data=restore_data, description="Restore original product name")
             
-            # Show all products
-            for product in response:
-                print(f"      [{product.get('sku', 'No SKU')}] {product.get('name', 'Unnamed')}")
+            # Test soft DELETE product  
+            success, delete_result = self.run_test("Soft Delete Product", "DELETE", f"products/{product_id}", 200,
+                                                 description="Test soft delete (sets is_active=false)")
+            if success:
+                print(f"   🗑️ Soft delete mode: {delete_result.get('mode', 'unknown')}")
+                
+                # Restore active status
+                restore_data = {"is_active": True}
+                self.run_test("Restore Product Active", "PUT", f"products/{product_id}", 200,
+                             data=restore_data, description="Restore product active status")
 
     def test_users(self):
         """Test users endpoint"""
