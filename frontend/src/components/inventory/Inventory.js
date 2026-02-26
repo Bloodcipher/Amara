@@ -1,7 +1,9 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Warehouse, Plus, X } from 'lucide-react';
 import { fetchInventory, createInventory, fetchProducts } from '@/lib/api';
+import SearchBar from '@/components/ui/SearchBar';
+import ExportButton from '@/components/ui/ExportButton';
 
 export default function Inventory() {
   const [inventory, setInventory] = useState([]);
