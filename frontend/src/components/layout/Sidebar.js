@@ -2,11 +2,14 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   LayoutDashboard, Tags, Package, Factory, ClipboardList,
-  Warehouse, FileCode, Wand2, ChevronLeft, ChevronRight, Gem, GitBranch
+  Warehouse, FileCode, Wand2, ChevronLeft, ChevronRight, Gem, GitBranch,
+  Radio, HardHat
 } from 'lucide-react';
 
 const navItems = [
   { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
+  { id: 'control-tower', label: 'Control Tower', icon: Radio },
+  { id: 'artisan-portal', label: 'Artisan Portal', icon: HardHat },
   { id: 'sku-config', label: 'SKU Configuration', icon: Tags },
   { id: 'products', label: 'Products', icon: Package },
   { id: 'sku-generator', label: 'SKU Generator', icon: Wand2 },
