@@ -644,9 +644,14 @@ async def create_job_card(item: JobCardCreate, db=Depends(get_db)):
 @api_router.patch("/job-cards/{jc_id}/status")
 async def update_job_card_status(jc_id: str, status: str = Query(...), db=Depends(get_db)):
     try:
+        r = await db.execute(text("SELECT id FROM job_cards WHERE id = :id"), {"id": jc_id})
+        if not r.fetchone():
+            raise HTTPException(status_code=404, detail="Job card not found")
         await db.execute(text("UPDATE job_cards SET status=:st, updated_at=NOW() WHERE id=:id"), {"st": status, "id": jc_id})
         await db.commit()
         return {"status": "updated"}
+    except HTTPException:
+        raise
     except Exception as e:
         await db.rollback()
         raise HTTPException(status_code=400, detail=str(e))
