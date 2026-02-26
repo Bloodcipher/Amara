@@ -434,9 +434,9 @@ class AMARAAPITester:
             print(f"   ❌ Could not get sample IDs from all lookup tables (got {len(sample_ids)}/7)")
 
     def test_schema_info(self):
-        """Test schema information endpoint"""
+        """Test schema information and ER diagram endpoints"""
         print("\n" + "="*50)
-        print("TESTING SCHEMA INFORMATION")
+        print("TESTING SCHEMA INFORMATION & ER DIAGRAM")
         print("="*50)
         
         success, response = self.run_test("Get Schema", "GET", "schema", 200,
@@ -448,6 +448,77 @@ class AMARAAPITester:
             for table in important_tables:
                 if table in response:
                     print(f"      {table}: {len(response[table])} columns")
+        
+        # NEW: Test ER diagram endpoint
+        success, er_response = self.run_test("Get ER Diagram", "GET", "er-diagram", 200,
+                                           description="Retrieve ER diagram with tables, relationships, and schema")
+        if success:
+            tables = er_response.get('tables', [])
+            relationships = er_response.get('relationships', [])
+            schema = er_response.get('schema', {})
+            
+            print(f"   📊 ER Diagram Analysis:")
+            print(f"      Tables: {len(tables)} (expected: 16)")
+            print(f"      Relationships: {len(relationships)} (expected: 17+)")
+            print(f"      Schema columns for {len(schema)} tables")
+            
+            # Check if we have the expected number of tables
+            if len(tables) >= 16:
+                print(f"   ✅ Expected 16+ tables found")
+            else:
+                print(f"   ⚠️ Only {len(tables)} tables found, expected 16+")
+                
+            # Check relationships
+            if len(relationships) >= 17:
+                print(f"   ✅ Expected 17+ relationships found")
+            else:
+                print(f"   ⚠️ Only {len(relationships)} relationships found, expected 17+")
+            
+            # Show some key tables
+            key_tables = ['products', 'job_cards', 'inventory', 'sku_face_value', 'dices']
+            missing_tables = [t for t in key_tables if t not in tables]
+            if missing_tables:
+                print(f"   ❌ Missing key tables: {missing_tables}")
+            else:
+                print(f"   ✅ All key tables present: {key_tables}")
+
+    def test_csv_exports(self):
+        """Test CSV export functionality for all entities"""
+        print("\n" + "="*50)
+        print("TESTING CSV EXPORT ENDPOINTS")
+        print("="*50)
+        
+        export_endpoints = [
+            ('products', 'Products export with SKU,Name,Description headers'),
+            ('inventory', 'Inventory export with stock and pricing data'),
+            ('job-cards', 'Job cards export with production data'),
+            ('qc-logs', 'QC logs export with inspection data')
+        ]
+        
+        for entity, description in export_endpoints:
+            success, response = self.run_test(f"Export {entity.title()}", "GET", f"export/{entity}", 200,
+                                            description=description)
+            if success:
+                # For CSV exports, response will be text content
+                if isinstance(response, str):
+                    lines = response.split('\n')
+                    header_line = lines[0] if lines else ""
+                    data_lines = len([line for line in lines[1:] if line.strip()])
+                    
+                    print(f"   📄 CSV Export Analysis:")
+                    print(f"      Headers: {header_line}")
+                    print(f"      Data rows: {data_lines}")
+                    
+                    # Check specific headers for products export
+                    if entity == 'products':
+                        expected_headers = ['SKU', 'Name', 'Description']
+                        for header in expected_headers:
+                            if header in header_line:
+                                print(f"   ✅ Found expected header: {header}")
+                            else:
+                                print(f"   ❌ Missing header: {header}")
+                else:
+                    print(f"   ⚠️ Export returned JSON instead of CSV format")
 
     def print_summary(self):
         """Print test summary"""
