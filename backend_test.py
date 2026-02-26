@@ -482,6 +482,111 @@ class AMARAAPITester:
             else:
                 print(f"   ✅ All key tables present: {key_tables}")
 
+    def test_realtime_features(self):
+        """Test Production Tracker and Realtime features"""
+        print("\n" + "="*50)
+        print("TESTING PRODUCTION TRACKER & REALTIME FEATURES")
+        print("="*50)
+        
+        # Test job card status updates (key for Control Tower)
+        success, response = self.run_test("Get Job Cards for Realtime Testing", "GET", "job-cards", 200,
+                                        description="Get job cards to test realtime status updates")
+        if success:
+            if isinstance(response, dict) and 'items' in response:
+                items = response['items']
+            else:
+                items = response
+            
+            print(f"   📋 Found {len(items)} job cards for realtime testing")
+            
+            # Show job card statuses for Control Tower verification
+            status_counts = {}
+            in_progress_artisans = []
+            pending_jobs = []
+            
+            for jc in items:
+                status = jc.get('status', 'unknown')
+                status_counts[status] = status_counts.get(status, 0) + 1
+                
+                if status == 'in_progress':
+                    artisan = jc.get('artisan_name') or 'Unassigned'
+                    in_progress_artisans.append(artisan)
+                elif status == 'pending':
+                    pending_jobs.append(jc.get('job_card_number', 'Unknown'))
+            
+            print(f"   📊 Status Distribution (for Control Tower):")
+            for status, count in status_counts.items():
+                print(f"      {status}: {count} job cards")
+            
+            print(f"   👥 In Progress Artisans: {in_progress_artisans}")
+            print(f"   ⏳ Pending Jobs: {pending_jobs}")
+            
+            # Test job card status update (simulates Control Tower interactions)
+            if items:
+                test_job = None
+                for jc in items:
+                    if jc.get('status') == 'pending':
+                        test_job = jc
+                        break
+                
+                if test_job:
+                    job_id = test_job['id']
+                    original_status = test_job['status']
+                    
+                    # Test Start Job (Pending -> In Progress)
+                    update_data = {"status": "in_progress"}
+                    success, updated = self.run_test("Update Job Status (Start)", "PATCH", f"job-cards/{job_id}", 200,
+                                                   data=update_data,
+                                                   description="Test pending -> in_progress transition")
+                    if success:
+                        print(f"   ✅ Successfully started job: {test_job.get('job_card_number')}")
+                        
+                        # Test Complete Job (In Progress -> Completed)
+                        complete_data = {"status": "completed"}
+                        success, completed = self.run_test("Update Job Status (Complete)", "PATCH", f"job-cards/{job_id}", 200,
+                                                         data=complete_data,
+                                                         description="Test in_progress -> completed transition")
+                        if success:
+                            print(f"   ✅ Successfully completed job: {test_job.get('job_card_number')}")
+                            
+                            # Restore original status
+                            restore_data = {"status": original_status}
+                            self.run_test("Restore Job Status", "PATCH", f"job-cards/{job_id}", 200,
+                                       data=restore_data, description="Restore original status")
+                else:
+                    print(f"   ℹ️ No pending jobs available for status update testing")
+        
+        # Test QC log creation (for inline QC in Artisan Portal)
+        success, users_response = self.run_test("Get Artisans for QC Testing", "GET", "users", 200,
+                                               description="Get artisan users for QC log testing")
+        if success:
+            artisans = [u for u in users_response if u.get('role') == 'artisan']
+            print(f"   👷 Found {len(artisans)} artisan users")
+            
+            if artisans and items:
+                # Find an in-progress job for QC testing
+                test_job = None
+                for jc in items:
+                    if jc.get('status') == 'in_progress':
+                        test_job = jc
+                        break
+                
+                if test_job:
+                    qc_data = {
+                        "job_card_id": test_job['id'],
+                        "inspected_by": artisans[0]['id'],
+                        "qty_passed": 5,
+                        "qty_failed": 1,
+                        "defect_reason": "Minor surface defect"
+                    }
+                    
+                    success, qc_result = self.run_test("Create QC Log (Inline QC)", "POST", "qc-logs", 201,
+                                                     data=qc_data,
+                                                     description="Test inline QC log creation from Artisan Portal")
+                    if success:
+                        print(f"   ✅ QC log created for job: {test_job.get('job_card_number')}")
+                        print(f"      Passed: {qc_data['qty_passed']}, Failed: {qc_data['qty_failed']}")
+
     def test_csv_exports(self):
         """Test CSV export functionality for all entities"""
         print("\n" + "="*50)
