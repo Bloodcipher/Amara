@@ -14,6 +14,8 @@ export default function Manufacturing() {
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState('dices');
   const [showForm, setShowForm] = useState(false);
+  const [search, setSearch] = useState('');
+  const searchTimeout = useRef(null);
   const [diceForm, setDiceForm] = useState({ dice_number: '', dice_type: '', description: '' });
   const [mapForm, setMapForm] = useState({ dice_id: '', target_id: '' });
 
