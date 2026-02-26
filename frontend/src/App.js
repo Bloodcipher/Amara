@@ -10,9 +10,12 @@ import Production from '@/components/production/Production';
 import Inventory from '@/components/inventory/Inventory';
 import MigrationViewer from '@/components/migrations/MigrationViewer';
 import ERDiagram from '@/components/schema/ERDiagram';
+import ProductionTracker from '@/components/tracker/ProductionTracker';
+import ArtisanView from '@/components/tracker/ArtisanView';
 
 const pages = {
   'dashboard': DashboardOverview,
+  'control-tower': ProductionTracker,
   'sku-config': SKUConfiguration,
   'products': ProductsCatalog,
   'sku-generator': SKUGenerator,
@@ -26,6 +29,21 @@ const pages = {
 function App() {
   const [activePage, setActivePage] = useState('dashboard');
   const [sidebarWidth, setSidebarWidth] = useState(256);
+
+  // Artisan portal gets special treatment - wraps with back button
+  if (activePage === 'artisan-portal') {
+    return (
+      <div className="min-h-screen bg-[#050505]">
+        <Sidebar activePage={activePage} onNavigate={setActivePage} onWidthChange={setSidebarWidth} />
+        <main style={{ marginLeft: sidebarWidth }} className="min-h-screen transition-all duration-300">
+          <div className="p-6 md:p-10 max-w-[1600px]">
+            <ArtisanView onBack={() => setActivePage('control-tower')} />
+          </div>
+        </main>
+      </div>
+    );
+  }
+
   const PageComponent = pages[activePage] || DashboardOverview;
 
   return (
