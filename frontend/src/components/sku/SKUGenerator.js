@@ -22,10 +22,10 @@ export default function SKUGenerator() {
 
   const loadLookups = useCallback(async () => {
     try {
+      const promises = SLOTS.map(slot => fetchLookup(slot.key));
+      const responses = await Promise.all(promises);
       const results = {};
-      for (const slot of SLOTS) {
-        results[slot.key] = await fetchLookup(slot.key);
-      }
+      SLOTS.forEach((slot, i) => { results[slot.key] = responses[i]; });
       setLookups(results);
     } catch (e) {
       console.error(e);
