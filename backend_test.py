@@ -667,6 +667,7 @@ def main():
         tester.test_migrations()
         tester.test_sku_generator()
         tester.test_schema_info()
+        tester.test_realtime_features()  # NEW: Test Production Tracker & Realtime
         tester.test_csv_exports()  # NEW: Test CSV export functionality
         
         # Print summary
