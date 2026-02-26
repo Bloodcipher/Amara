@@ -10,6 +10,8 @@ export default function Inventory() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showForm, setShowForm] = useState(false);
+  const [search, setSearch] = useState('');
+  const searchTimeout = useRef(null);
   const [form, setForm] = useState({
     product_id: '', stock_qty: '', unit_cost: '', selling_price: '', mrp: '', weight_grams: '', location: '',
   });
