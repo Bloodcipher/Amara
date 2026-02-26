@@ -32,9 +32,15 @@ export default function Manufacturing() {
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [search]);
 
   useEffect(() => { loadData(); }, [loadData]);
+
+  const handleSearch = (val) => {
+    setSearch(val);
+    clearTimeout(searchTimeout.current);
+    searchTimeout.current = setTimeout(() => loadData(val), 400);
+  };
 
   const handleCreateDice = async () => {
     if (!diceForm.dice_number || !diceForm.dice_type) return;
