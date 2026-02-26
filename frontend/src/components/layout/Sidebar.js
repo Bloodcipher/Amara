@@ -16,8 +16,14 @@ const navItems = [
   { id: 'migrations', label: 'SQL Migrations', icon: FileCode },
 ];
 
-export default function Sidebar({ activePage, onNavigate }) {
+export default function Sidebar({ activePage, onNavigate, onWidthChange }) {
   const [collapsed, setCollapsed] = useState(false);
+
+  const toggleCollapse = () => {
+    const next = !collapsed;
+    setCollapsed(next);
+    if (onWidthChange) onWidthChange(next ? 72 : 256);
+  };
 
   return (
     <motion.aside
