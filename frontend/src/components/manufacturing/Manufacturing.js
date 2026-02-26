@@ -86,18 +86,25 @@ export default function Manufacturing() {
         </button>
       </div>
 
-      <div className="flex gap-2 mb-6">
-        {tabs.map(t => (
-          <button
-            key={t.id}
-            data-testid={`mfg-tab-${t.id}`}
-            onClick={() => { setActiveTab(t.id); setShowForm(false); }}
-            className={`px-4 py-2 text-xs uppercase tracking-wider font-medium transition-all
-              ${activeTab === t.id ? 'bg-gold text-black' : 'bg-white/5 text-neutral-400 hover:text-white'}`}
-          >
-            {t.label}
-          </button>
-        ))}
+      <div className="flex items-center gap-4 mb-6">
+        <div className="flex gap-2">
+          {tabs.map(t => (
+            <button
+              key={t.id}
+              data-testid={`mfg-tab-${t.id}`}
+              onClick={() => { setActiveTab(t.id); setShowForm(false); setSearch(''); }}
+              className={`px-4 py-2 text-xs uppercase tracking-wider font-medium transition-all
+                ${activeTab === t.id ? 'bg-gold text-black' : 'bg-white/5 text-neutral-400 hover:text-white'}`}
+            >
+              {t.label}
+            </button>
+          ))}
+        </div>
+        {activeTab === 'dices' && (
+          <div className="flex-1 max-w-sm">
+            <SearchBar value={search} onChange={handleSearch} placeholder="Search dices..." />
+          </div>
+        )}
       </div>
 
       {showForm && (
