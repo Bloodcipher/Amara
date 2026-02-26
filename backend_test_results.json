@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-02-26T14:57:47.607171",
+  "timestamp": "2026-02-26T15:21:30.674803",
   "summary": {
-    "total_tests": 29,
-    "passed": 29,
-    "failed": 0,
-    "success_rate": 100.0
+    "total_tests": 43,
+    "passed": 41,
+    "failed": 2,
+    "success_rate": 95.34883720930233
   },
   "detailed_results": [
     {
@@ -41,7 +41,7 @@
       "actual_status": 200,
       "success": true,
       "response_data": {
-        "total_products": 2,
+        "total_products": 3,
         "active_job_cards": 0,
         "total_inventory_value": 0.0,
         "qc_pass_rate": 100.0,
@@ -571,75 +571,358 @@
       "error": null
     },
     {
-      "name": "Get Products",
+      "name": "Get Products (Paginated)",
       "endpoint": "products",
       "method": "GET",
       "expected_status": 200,
       "actual_status": 200,
       "success": true,
-      "response_data": [
-        {
-          "id": "60803d88-78da-45c2-be27-0cfed2305846",
-          "name": "Silver Bugadi Floral v2",
-          "description": "Test product 2",
-          "sku": "0BSFXSS001",
-          "sequence_num": 1,
-          "face_value_id": "ec802608-4183-415a-8c0f-a62f62485c82",
-          "category_id": "012f9a2a-bd46-49d4-b821-c3faf70f2352",
-          "material_id": "9a572b70-84ef-44b8-8407-05a011f0df19",
-          "motif_id": "d9a91c8d-df82-4e10-af71-c1d226ad11fa",
-          "finding_id": "3b3e45d0-6e1c-42cc-bcc9-794cbf072912",
-          "locking_id": "7778afb0-7d42-4faf-b672-5dc1b43ce289",
-          "size_id": "c5b6f783-2cb5-4749-b32e-50d7500eac78",
-          "is_active": true,
-          "created_at": "2026-02-26T14:44:54.899735+00:00",
-          "face_value_code": "0",
-          "category_code": "B",
-          "material_code": "S",
-          "motif_code": "F",
-          "finding_code": "X",
-          "locking_code": "S",
-          "size_code": "S",
-          "face_value_name": "Economy",
-          "category_name": "Bugadi",
-          "material_name": "Silver 925",
-          "motif_name": "Floral",
-          "finding_name": "NA",
-          "locking_name": "Screw",
-          "size_name": "Small"
-        },
-        {
-          "id": "bf4296c6-4701-4538-b0bf-0d4f1895369d",
-          "name": "Silver Bugadi Floral",
-          "description": "Test product",
-          "sku": "0BSFXSS000",
-          "sequence_num": 0,
-          "face_value_id": "ec802608-4183-415a-8c0f-a62f62485c82",
-          "category_id": "012f9a2a-bd46-49d4-b821-c3faf70f2352",
-          "material_id": "9a572b70-84ef-44b8-8407-05a011f0df19",
-          "motif_id": "d9a91c8d-df82-4e10-af71-c1d226ad11fa",
-          "finding_id": "3b3e45d0-6e1c-42cc-bcc9-794cbf072912",
-          "locking_id": "7778afb0-7d42-4faf-b672-5dc1b43ce289",
-          "size_id": "c5b6f783-2cb5-4749-b32e-50d7500eac78",
-          "is_active": true,
-          "created_at": "2026-02-26T14:44:54.899735+00:00",
-          "face_value_code": "0",
-          "category_code": "B",
-          "material_code": "S",
-          "motif_code": "F",
-          "finding_code": "X",
-          "locking_code": "S",
-          "size_code": "S",
-          "face_value_name": "Economy",
-          "category_name": "Bugadi",
-          "material_name": "Silver 925",
-          "motif_name": "Floral",
-          "finding_name": "NA",
-          "locking_name": "Screw",
-          "size_name": "Small"
-        }
-      ],
+      "response_data": {
+        "items": [
+          {
+            "id": "7bdb5c89-ce72-475e-964b-d82d008ff38e",
+            "name": "Silver Bugadi Floral - Updated",
+            "description": "Automated test product",
+            "sku": "0ABABCA000",
+            "sequence_num": 0,
+            "face_value_id": "ec802608-4183-415a-8c0f-a62f62485c82",
+            "category_id": "b2b457f5-6097-403e-aff9-1b045ebef216",
+            "material_id": "f4ccd86a-e216-4647-85e3-350c3566e5c4",
+            "motif_id": "5f1e8715-cadb-4463-bdbc-dc4fa4827238",
+            "finding_id": "80b9fb1b-0ff5-4d6b-8169-ff7610095bbd",
+            "locking_id": "1100c774-da37-4741-94a0-c70b3f8e57bd",
+            "size_id": "513f9065-f431-42ff-b385-065ccf822503",
+            "is_active": true,
+            "created_at": "2026-02-26T14:58:28.987745+00:00",
+            "face_value_code": "0",
+            "category_code": "A",
+            "material_code": "B",
+            "motif_code": "A",
+            "finding_code": "B",
+            "locking_code": "C",
+            "size_code": "A",
+            "face_value_name": "Economy",
+            "category_name": "Anklet",
+            "material_name": "Brass",
+            "motif_name": "Abstract",
+            "finding_name": "Lobster",
+            "locking_name": "Clasp",
+            "size_name": "Adjustable"
+          },
+          {
+            "id": "60803d88-78da-45c2-be27-0cfed2305846",
+            "name": "Silver Bugadi Floral v2",
+            "description": "Test product 2",
+            "sku": "0BSFXSS001",
+            "sequence_num": 1,
+            "face_value_id": "ec802608-4183-415a-8c0f-a62f62485c82",
+            "category_id": "012f9a2a-bd46-49d4-b821-c3faf70f2352",
+            "material_id": "9a572b70-84ef-44b8-8407-05a011f0df19",
+            "motif_id": "d9a91c8d-df82-4e10-af71-c1d226ad11fa",
+            "finding_id": "3b3e45d0-6e1c-42cc-bcc9-794cbf072912",
+            "locking_id": "7778afb0-7d42-4faf-b672-5dc1b43ce289",
+            "size_id": "c5b6f783-2cb5-4749-b32e-50d7500eac78",
+            "is_active": true,
+            "created_at": "2026-02-26T14:44:54.899735+00:00",
+            "face_value_code": "0",
+            "category_code": "B",
+            "material_code": "S",
+            "motif_code": "F",
+            "finding_code": "X",
+            "locking_code": "S",
+            "size_code": "S",
+            "face_value_name": "Economy",
+            "category_name": "Bugadi",
+            "material_name": "Silver 925",
+            "motif_name": "Floral",
+            "finding_name": "NA",
+            "locking_name": "Screw",
+            "size_name": "Small"
+          },
+          {
+            "id": "bf4296c6-4701-4538-b0bf-0d4f1895369d",
+            "name": "Silver Bugadi Floral",
+            "description": "Test product",
+            "sku": "0BSFXSS000",
+            "sequence_num": 0,
+            "face_value_id": "ec802608-4183-415a-8c0f-a62f62485c82",
+            "category_id": "012f9a2a-bd46-49d4-b821-c3faf70f2352",
+            "material_id": "9a572b70-84ef-44b8-8407-05a011f0df19",
+            "motif_id": "d9a91c8d-df82-4e10-af71-c1d226ad11fa",
+            "finding_id": "3b3e45d0-6e1c-42cc-bcc9-794cbf072912",
+            "locking_id": "7778afb0-7d42-4faf-b672-5dc1b43ce289",
+            "size_id": "c5b6f783-2cb5-4749-b32e-50d7500eac78",
+            "is_active": true,
+            "created_at": "2026-02-26T14:44:54.899735+00:00",
+            "face_value_code": "0",
+            "category_code": "B",
+            "material_code": "S",
+            "motif_code": "F",
+            "finding_code": "X",
+            "locking_code": "S",
+            "size_code": "S",
+            "face_value_name": "Economy",
+            "category_name": "Bugadi",
+            "material_name": "Silver 925",
+            "motif_name": "Floral",
+            "finding_name": "NA",
+            "locking_name": "Screw",
+            "size_name": "Small"
+          }
+        ],
+        "total": 3,
+        "page": 1,
+        "page_size": 50,
+        "total_pages": 1
+      },
       "error": null
+    },
+    {
+      "name": "Products Pagination",
+      "endpoint": "products?page=1&page_size=5",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": {
+        "items": [
+          {
+            "id": "7bdb5c89-ce72-475e-964b-d82d008ff38e",
+            "name": "Silver Bugadi Floral - Updated",
+            "description": "Automated test product",
+            "sku": "0ABABCA000",
+            "sequence_num": 0,
+            "face_value_id": "ec802608-4183-415a-8c0f-a62f62485c82",
+            "category_id": "b2b457f5-6097-403e-aff9-1b045ebef216",
+            "material_id": "f4ccd86a-e216-4647-85e3-350c3566e5c4",
+            "motif_id": "5f1e8715-cadb-4463-bdbc-dc4fa4827238",
+            "finding_id": "80b9fb1b-0ff5-4d6b-8169-ff7610095bbd",
+            "locking_id": "1100c774-da37-4741-94a0-c70b3f8e57bd",
+            "size_id": "513f9065-f431-42ff-b385-065ccf822503",
+            "is_active": true,
+            "created_at": "2026-02-26T14:58:28.987745+00:00",
+            "face_value_code": "0",
+            "category_code": "A",
+            "material_code": "B",
+            "motif_code": "A",
+            "finding_code": "B",
+            "locking_code": "C",
+            "size_code": "A",
+            "face_value_name": "Economy",
+            "category_name": "Anklet",
+            "material_name": "Brass",
+            "motif_name": "Abstract",
+            "finding_name": "Lobster",
+            "locking_name": "Clasp",
+            "size_name": "Adjustable"
+          },
+          {
+            "id": "60803d88-78da-45c2-be27-0cfed2305846",
+            "name": "Silver Bugadi Floral v2",
+            "description": "Test product 2",
+            "sku": "0BSFXSS001",
+            "sequence_num": 1,
+            "face_value_id": "ec802608-4183-415a-8c0f-a62f62485c82",
+            "category_id": "012f9a2a-bd46-49d4-b821-c3faf70f2352",
+            "material_id": "9a572b70-84ef-44b8-8407-05a011f0df19",
+            "motif_id": "d9a91c8d-df82-4e10-af71-c1d226ad11fa",
+            "finding_id": "3b3e45d0-6e1c-42cc-bcc9-794cbf072912",
+            "locking_id": "7778afb0-7d42-4faf-b672-5dc1b43ce289",
+            "size_id": "c5b6f783-2cb5-4749-b32e-50d7500eac78",
+            "is_active": true,
+            "created_at": "2026-02-26T14:44:54.899735+00:00",
+            "face_value_code": "0",
+            "category_code": "B",
+            "material_code": "S",
+            "motif_code": "F",
+            "finding_code": "X",
+            "locking_code": "S",
+            "size_code": "S",
+            "face_value_name": "Economy",
+            "category_name": "Bugadi",
+            "material_name": "Silver 925",
+            "motif_name": "Floral",
+            "finding_name": "NA",
+            "locking_name": "Screw",
+            "size_name": "Small"
+          },
+          {
+            "id": "bf4296c6-4701-4538-b0bf-0d4f1895369d",
+            "name": "Silver Bugadi Floral",
+            "description": "Test product",
+            "sku": "0BSFXSS000",
+            "sequence_num": 0,
+            "face_value_id": "ec802608-4183-415a-8c0f-a62f62485c82",
+            "category_id": "012f9a2a-bd46-49d4-b821-c3faf70f2352",
+            "material_id": "9a572b70-84ef-44b8-8407-05a011f0df19",
+            "motif_id": "d9a91c8d-df82-4e10-af71-c1d226ad11fa",
+            "finding_id": "3b3e45d0-6e1c-42cc-bcc9-794cbf072912",
+            "locking_id": "7778afb0-7d42-4faf-b672-5dc1b43ce289",
+            "size_id": "c5b6f783-2cb5-4749-b32e-50d7500eac78",
+            "is_active": true,
+            "created_at": "2026-02-26T14:44:54.899735+00:00",
+            "face_value_code": "0",
+            "category_code": "B",
+            "material_code": "S",
+            "motif_code": "F",
+            "finding_code": "X",
+            "locking_code": "S",
+            "size_code": "S",
+            "face_value_name": "Economy",
+            "category_name": "Bugadi",
+            "material_name": "Silver 925",
+            "motif_name": "Floral",
+            "finding_name": "NA",
+            "locking_name": "Screw",
+            "size_name": "Small"
+          }
+        ],
+        "total": 3,
+        "page": 1,
+        "page_size": 5,
+        "total_pages": 1
+      },
+      "error": null
+    },
+    {
+      "name": "Product Search by Name",
+      "endpoint": "products?q=bugadi",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": {
+        "items": [
+          {
+            "id": "7bdb5c89-ce72-475e-964b-d82d008ff38e",
+            "name": "Silver Bugadi Floral - Updated",
+            "description": "Automated test product",
+            "sku": "0ABABCA000",
+            "sequence_num": 0,
+            "face_value_id": "ec802608-4183-415a-8c0f-a62f62485c82",
+            "category_id": "b2b457f5-6097-403e-aff9-1b045ebef216",
+            "material_id": "f4ccd86a-e216-4647-85e3-350c3566e5c4",
+            "motif_id": "5f1e8715-cadb-4463-bdbc-dc4fa4827238",
+            "finding_id": "80b9fb1b-0ff5-4d6b-8169-ff7610095bbd",
+            "locking_id": "1100c774-da37-4741-94a0-c70b3f8e57bd",
+            "size_id": "513f9065-f431-42ff-b385-065ccf822503",
+            "is_active": true,
+            "created_at": "2026-02-26T14:58:28.987745+00:00",
+            "face_value_code": "0",
+            "category_code": "A",
+            "material_code": "B",
+            "motif_code": "A",
+            "finding_code": "B",
+            "locking_code": "C",
+            "size_code": "A",
+            "face_value_name": "Economy",
+            "category_name": "Anklet",
+            "material_name": "Brass",
+            "motif_name": "Abstract",
+            "finding_name": "Lobster",
+            "locking_name": "Clasp",
+            "size_name": "Adjustable"
+          },
+          {
+            "id": "bf4296c6-4701-4538-b0bf-0d4f1895369d",
+            "name": "Silver Bugadi Floral",
+            "description": "Test product",
+            "sku": "0BSFXSS000",
+            "sequence_num": 0,
+            "face_value_id": "ec802608-4183-415a-8c0f-a62f62485c82",
+            "category_id": "012f9a2a-bd46-49d4-b821-c3faf70f2352",
+            "material_id": "9a572b70-84ef-44b8-8407-05a011f0df19",
+            "motif_id": "d9a91c8d-df82-4e10-af71-c1d226ad11fa",
+            "finding_id": "3b3e45d0-6e1c-42cc-bcc9-794cbf072912",
+            "locking_id": "7778afb0-7d42-4faf-b672-5dc1b43ce289",
+            "size_id": "c5b6f783-2cb5-4749-b32e-50d7500eac78",
+            "is_active": true,
+            "created_at": "2026-02-26T14:44:54.899735+00:00",
+            "face_value_code": "0",
+            "category_code": "B",
+            "material_code": "S",
+            "motif_code": "F",
+            "finding_code": "X",
+            "locking_code": "S",
+            "size_code": "S",
+            "face_value_name": "Economy",
+            "category_name": "Bugadi",
+            "material_name": "Silver 925",
+            "motif_name": "Floral",
+            "finding_name": "NA",
+            "locking_name": "Screw",
+            "size_name": "Small"
+          },
+          {
+            "id": "60803d88-78da-45c2-be27-0cfed2305846",
+            "name": "Silver Bugadi Floral v2",
+            "description": "Test product 2",
+            "sku": "0BSFXSS001",
+            "sequence_num": 1,
+            "face_value_id": "ec802608-4183-415a-8c0f-a62f62485c82",
+            "category_id": "012f9a2a-bd46-49d4-b821-c3faf70f2352",
+            "material_id": "9a572b70-84ef-44b8-8407-05a011f0df19",
+            "motif_id": "d9a91c8d-df82-4e10-af71-c1d226ad11fa",
+            "finding_id": "3b3e45d0-6e1c-42cc-bcc9-794cbf072912",
+            "locking_id": "7778afb0-7d42-4faf-b672-5dc1b43ce289",
+            "size_id": "c5b6f783-2cb5-4749-b32e-50d7500eac78",
+            "is_active": true,
+            "created_at": "2026-02-26T14:44:54.899735+00:00",
+            "face_value_code": "0",
+            "category_code": "B",
+            "material_code": "S",
+            "motif_code": "F",
+            "finding_code": "X",
+            "locking_code": "S",
+            "size_code": "S",
+            "face_value_name": "Economy",
+            "category_name": "Bugadi",
+            "material_name": "Silver 925",
+            "motif_name": "Floral",
+            "finding_name": "NA",
+            "locking_name": "Screw",
+            "size_name": "Small"
+          }
+        ],
+        "total": 3,
+        "page": 1,
+        "page_size": 50,
+        "total_pages": 1
+      },
+      "error": null
+    },
+    {
+      "name": "Update Product",
+      "endpoint": "products/7bdb5c89-ce72-475e-964b-d82d008ff38e",
+      "method": "PUT",
+      "expected_status": 200,
+      "actual_status": null,
+      "success": false,
+      "response_data": null,
+      "error": "Unexpected error: cannot access local variable 'response' where it is not associated with a value"
+    },
+    {
+      "name": "Soft Delete Product",
+      "endpoint": "products/7bdb5c89-ce72-475e-964b-d82d008ff38e",
+      "method": "DELETE",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": {
+        "status": "deleted",
+        "mode": "soft"
+      },
+      "error": null
+    },
+    {
+      "name": "Restore Product Active",
+      "endpoint": "products/7bdb5c89-ce72-475e-964b-d82d008ff38e",
+      "method": "PUT",
+      "expected_status": 200,
+      "actual_status": null,
+      "success": false,
+      "response_data": null,
+      "error": "Unexpected error: cannot access local variable 'response' where it is not associated with a value"
     },
     {
       "name": "Get Users",
@@ -760,6 +1043,25 @@
       "error": null
     },
     {
+      "name": "Dices Search",
+      "endpoint": "dices?q=D-101",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": [
+        {
+          "id": "9b35d39f-a910-4eca-8d4b-1688cf5d63c2",
+          "dice_number": "D-101",
+          "dice_type": "stamping",
+          "description": "Floral stamping die for bugadi",
+          "is_active": true,
+          "created_at": "2026-02-26T14:44:40.270250+00:00"
+        }
+      ],
+      "error": null
+    },
+    {
       "name": "Get Motif Mappings",
       "endpoint": "dice-mappings/motif",
       "method": "GET",
@@ -780,23 +1082,67 @@
       "error": null
     },
     {
-      "name": "Get Job Cards",
+      "name": "Get Job Cards (Paginated)",
       "endpoint": "job-cards",
       "method": "GET",
       "expected_status": 200,
       "actual_status": 200,
       "success": true,
-      "response_data": [],
+      "response_data": {
+        "items": [],
+        "total": 0,
+        "page": 1,
+        "page_size": 50,
+        "total_pages": 1
+      },
       "error": null
     },
     {
-      "name": "Get QC Logs",
+      "name": "Job Cards Search with Status",
+      "endpoint": "job-cards?q=test&status=pending&page=1",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": {
+        "items": [],
+        "total": 0,
+        "page": 1,
+        "page_size": 50,
+        "total_pages": 1
+      },
+      "error": null
+    },
+    {
+      "name": "Get QC Logs (Paginated)",
       "endpoint": "qc-logs",
       "method": "GET",
       "expected_status": 200,
       "actual_status": 200,
       "success": true,
-      "response_data": [],
+      "response_data": {
+        "items": [],
+        "total": 0,
+        "page": 1,
+        "page_size": 50,
+        "total_pages": 1
+      },
+      "error": null
+    },
+    {
+      "name": "QC Logs Search",
+      "endpoint": "qc-logs?q=test&page=1",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": {
+        "items": [],
+        "total": 0,
+        "page": 1,
+        "page_size": 50,
+        "total_pages": 1
+      },
       "error": null
     },
     {
@@ -806,7 +1152,45 @@
       "expected_status": 200,
       "actual_status": 200,
       "success": true,
-      "response_data": [],
+      "response_data": [
+        {
+          "id": "c49a806d-8425-4ab3-a738-84c3d8a0ef34",
+          "product_id": "7bdb5c89-ce72-475e-964b-d82d008ff38e",
+          "stock_qty": 100,
+          "reserved_qty": 0,
+          "unit_cost": null,
+          "selling_price": null,
+          "mrp": null,
+          "weight_grams": null,
+          "location": "",
+          "product_name": "Silver Bugadi Floral - Updated",
+          "product_sku": "0ABABCA000"
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "Inventory Search by Material",
+      "endpoint": "inventory?q=silver",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": [
+        {
+          "id": "c49a806d-8425-4ab3-a738-84c3d8a0ef34",
+          "product_id": "7bdb5c89-ce72-475e-964b-d82d008ff38e",
+          "stock_qty": 100,
+          "reserved_qty": 0,
+          "unit_cost": null,
+          "selling_price": null,
+          "mrp": null,
+          "weight_grams": null,
+          "location": "",
+          "product_name": "Silver Bugadi Floral - Updated",
+          "product_sku": "0ABABCA000"
+        }
+      ],
       "error": null
     },
     {
@@ -2205,6 +2589,1095 @@
           }
         ]
       },
+      "error": null
+    },
+    {
+      "name": "Get ER Diagram",
+      "endpoint": "er-diagram",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": {
+        "tables": [
+          "dice_locking_mapping",
+          "dice_motif_mapping",
+          "dices",
+          "inventory",
+          "job_cards",
+          "production",
+          "products",
+          "qc_logs",
+          "sku_category",
+          "sku_face_value",
+          "sku_finding",
+          "sku_locking",
+          "sku_material",
+          "sku_motif",
+          "sku_size",
+          "users"
+        ],
+        "relationships": [
+          {
+            "from_table": "products",
+            "from_column": "face_value_id",
+            "to_table": "sku_face_value",
+            "to_column": "id"
+          },
+          {
+            "from_table": "products",
+            "from_column": "category_id",
+            "to_table": "sku_category",
+            "to_column": "id"
+          },
+          {
+            "from_table": "products",
+            "from_column": "material_id",
+            "to_table": "sku_material",
+            "to_column": "id"
+          },
+          {
+            "from_table": "products",
+            "from_column": "motif_id",
+            "to_table": "sku_motif",
+            "to_column": "id"
+          },
+          {
+            "from_table": "products",
+            "from_column": "finding_id",
+            "to_table": "sku_finding",
+            "to_column": "id"
+          },
+          {
+            "from_table": "products",
+            "from_column": "locking_id",
+            "to_table": "sku_locking",
+            "to_column": "id"
+          },
+          {
+            "from_table": "products",
+            "from_column": "size_id",
+            "to_table": "sku_size",
+            "to_column": "id"
+          },
+          {
+            "from_table": "dice_motif_mapping",
+            "from_column": "dice_id",
+            "to_table": "dices",
+            "to_column": "id"
+          },
+          {
+            "from_table": "dice_motif_mapping",
+            "from_column": "motif_id",
+            "to_table": "sku_motif",
+            "to_column": "id"
+          },
+          {
+            "from_table": "dice_locking_mapping",
+            "from_column": "dice_id",
+            "to_table": "dices",
+            "to_column": "id"
+          },
+          {
+            "from_table": "dice_locking_mapping",
+            "from_column": "locking_id",
+            "to_table": "sku_locking",
+            "to_column": "id"
+          },
+          {
+            "from_table": "job_cards",
+            "from_column": "product_id",
+            "to_table": "products",
+            "to_column": "id"
+          },
+          {
+            "from_table": "job_cards",
+            "from_column": "assigned_artisan_id",
+            "to_table": "users",
+            "to_column": "id"
+          },
+          {
+            "from_table": "qc_logs",
+            "from_column": "job_card_id",
+            "to_table": "job_cards",
+            "to_column": "id"
+          },
+          {
+            "from_table": "qc_logs",
+            "from_column": "inspected_by",
+            "to_table": "users",
+            "to_column": "id"
+          },
+          {
+            "from_table": "inventory",
+            "from_column": "product_id",
+            "to_table": "products",
+            "to_column": "id"
+          },
+          {
+            "from_table": "production",
+            "from_column": "job_card_id",
+            "to_table": "job_cards",
+            "to_column": "id"
+          }
+        ],
+        "schema": {
+          "dice_locking_mapping": [
+            {
+              "column": "id",
+              "type": "uuid",
+              "nullable": "NO",
+              "default": "gen_random_uuid()",
+              "is_pk": true
+            },
+            {
+              "column": "dice_id",
+              "type": "uuid",
+              "nullable": "NO",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "locking_id",
+              "type": "uuid",
+              "nullable": "NO",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "created_at",
+              "type": "timestamp with time zone",
+              "nullable": "YES",
+              "default": "now()",
+              "is_pk": false
+            }
+          ],
+          "dice_motif_mapping": [
+            {
+              "column": "id",
+              "type": "uuid",
+              "nullable": "NO",
+              "default": "gen_random_uuid()",
+              "is_pk": true
+            },
+            {
+              "column": "dice_id",
+              "type": "uuid",
+              "nullable": "NO",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "motif_id",
+              "type": "uuid",
+              "nullable": "NO",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "created_at",
+              "type": "timestamp with time zone",
+              "nullable": "YES",
+              "default": "now()",
+              "is_pk": false
+            }
+          ],
+          "dices": [
+            {
+              "column": "id",
+              "type": "uuid",
+              "nullable": "NO",
+              "default": "gen_random_uuid()",
+              "is_pk": true
+            },
+            {
+              "column": "dice_number",
+              "type": "character varying",
+              "nullable": "NO",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "dice_type",
+              "type": "character varying",
+              "nullable": "NO",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "description",
+              "type": "text",
+              "nullable": "YES",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "is_active",
+              "type": "boolean",
+              "nullable": "YES",
+              "default": "true",
+              "is_pk": false
+            },
+            {
+              "column": "created_at",
+              "type": "timestamp with time zone",
+              "nullable": "YES",
+              "default": "now()",
+              "is_pk": false
+            },
+            {
+              "column": "updated_at",
+              "type": "timestamp with time zone",
+              "nullable": "YES",
+              "default": "now()",
+              "is_pk": false
+            }
+          ],
+          "inventory": [
+            {
+              "column": "id",
+              "type": "uuid",
+              "nullable": "NO",
+              "default": "gen_random_uuid()",
+              "is_pk": true
+            },
+            {
+              "column": "product_id",
+              "type": "uuid",
+              "nullable": "NO",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "stock_qty",
+              "type": "integer",
+              "nullable": "NO",
+              "default": "0",
+              "is_pk": false
+            },
+            {
+              "column": "reserved_qty",
+              "type": "integer",
+              "nullable": "NO",
+              "default": "0",
+              "is_pk": false
+            },
+            {
+              "column": "unit_cost",
+              "type": "numeric",
+              "nullable": "YES",
+              "default": "0.00",
+              "is_pk": false
+            },
+            {
+              "column": "selling_price",
+              "type": "numeric",
+              "nullable": "YES",
+              "default": "0.00",
+              "is_pk": false
+            },
+            {
+              "column": "mrp",
+              "type": "numeric",
+              "nullable": "YES",
+              "default": "0.00",
+              "is_pk": false
+            },
+            {
+              "column": "weight_grams",
+              "type": "numeric",
+              "nullable": "YES",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "location",
+              "type": "character varying",
+              "nullable": "YES",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "last_restocked_at",
+              "type": "timestamp with time zone",
+              "nullable": "YES",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "created_at",
+              "type": "timestamp with time zone",
+              "nullable": "YES",
+              "default": "now()",
+              "is_pk": false
+            },
+            {
+              "column": "updated_at",
+              "type": "timestamp with time zone",
+              "nullable": "YES",
+              "default": "now()",
+              "is_pk": false
+            }
+          ],
+          "job_cards": [
+            {
+              "column": "id",
+              "type": "uuid",
+              "nullable": "NO",
+              "default": "gen_random_uuid()",
+              "is_pk": true
+            },
+            {
+              "column": "product_id",
+              "type": "uuid",
+              "nullable": "NO",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "job_card_number",
+              "type": "character varying",
+              "nullable": "NO",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "target_qty",
+              "type": "integer",
+              "nullable": "NO",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "completed_qty",
+              "type": "integer",
+              "nullable": "YES",
+              "default": "0",
+              "is_pk": false
+            },
+            {
+              "column": "assigned_artisan_id",
+              "type": "uuid",
+              "nullable": "YES",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "status",
+              "type": "character varying",
+              "nullable": "NO",
+              "default": "'pending'::character varying",
+              "is_pk": false
+            },
+            {
+              "column": "priority",
+              "type": "character varying",
+              "nullable": "YES",
+              "default": "'normal'::character varying",
+              "is_pk": false
+            },
+            {
+              "column": "start_date",
+              "type": "date",
+              "nullable": "YES",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "due_date",
+              "type": "date",
+              "nullable": "YES",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "notes",
+              "type": "text",
+              "nullable": "YES",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "created_at",
+              "type": "timestamp with time zone",
+              "nullable": "YES",
+              "default": "now()",
+              "is_pk": false
+            },
+            {
+              "column": "updated_at",
+              "type": "timestamp with time zone",
+              "nullable": "YES",
+              "default": "now()",
+              "is_pk": false
+            }
+          ],
+          "production": [
+            {
+              "column": "id",
+              "type": "uuid",
+              "nullable": "NO",
+              "default": "gen_random_uuid()",
+              "is_pk": true
+            },
+            {
+              "column": "job_card_id",
+              "type": "uuid",
+              "nullable": "NO",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "material_assigned",
+              "type": "character varying",
+              "nullable": "YES",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "material_weight_grams",
+              "type": "numeric",
+              "nullable": "YES",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "material_cost",
+              "type": "numeric",
+              "nullable": "YES",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "wastage_grams",
+              "type": "numeric",
+              "nullable": "YES",
+              "default": "0",
+              "is_pk": false
+            },
+            {
+              "column": "production_date",
+              "type": "date",
+              "nullable": "YES",
+              "default": "CURRENT_DATE",
+              "is_pk": false
+            },
+            {
+              "column": "completion_date",
+              "type": "date",
+              "nullable": "YES",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "status",
+              "type": "character varying",
+              "nullable": "NO",
+              "default": "'allocated'::character varying",
+              "is_pk": false
+            },
+            {
+              "column": "notes",
+              "type": "text",
+              "nullable": "YES",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "created_at",
+              "type": "timestamp with time zone",
+              "nullable": "YES",
+              "default": "now()",
+              "is_pk": false
+            },
+            {
+              "column": "updated_at",
+              "type": "timestamp with time zone",
+              "nullable": "YES",
+              "default": "now()",
+              "is_pk": false
+            }
+          ],
+          "products": [
+            {
+              "column": "id",
+              "type": "uuid",
+              "nullable": "NO",
+              "default": "gen_random_uuid()",
+              "is_pk": true
+            },
+            {
+              "column": "name",
+              "type": "character varying",
+              "nullable": "NO",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "description",
+              "type": "text",
+              "nullable": "YES",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "face_value_id",
+              "type": "uuid",
+              "nullable": "NO",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "category_id",
+              "type": "uuid",
+              "nullable": "NO",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "material_id",
+              "type": "uuid",
+              "nullable": "NO",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "motif_id",
+              "type": "uuid",
+              "nullable": "NO",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "finding_id",
+              "type": "uuid",
+              "nullable": "NO",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "locking_id",
+              "type": "uuid",
+              "nullable": "NO",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "size_id",
+              "type": "uuid",
+              "nullable": "NO",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "sku",
+              "type": "character varying",
+              "nullable": "YES",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "sequence_num",
+              "type": "integer",
+              "nullable": "YES",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "is_active",
+              "type": "boolean",
+              "nullable": "YES",
+              "default": "true",
+              "is_pk": false
+            },
+            {
+              "column": "created_at",
+              "type": "timestamp with time zone",
+              "nullable": "YES",
+              "default": "now()",
+              "is_pk": false
+            },
+            {
+              "column": "updated_at",
+              "type": "timestamp with time zone",
+              "nullable": "YES",
+              "default": "now()",
+              "is_pk": false
+            }
+          ],
+          "qc_logs": [
+            {
+              "column": "id",
+              "type": "uuid",
+              "nullable": "NO",
+              "default": "gen_random_uuid()",
+              "is_pk": true
+            },
+            {
+              "column": "job_card_id",
+              "type": "uuid",
+              "nullable": "NO",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "inspected_by",
+              "type": "uuid",
+              "nullable": "YES",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "qty_passed",
+              "type": "integer",
+              "nullable": "NO",
+              "default": "0",
+              "is_pk": false
+            },
+            {
+              "column": "qty_failed",
+              "type": "integer",
+              "nullable": "NO",
+              "default": "0",
+              "is_pk": false
+            },
+            {
+              "column": "defect_reason",
+              "type": "text",
+              "nullable": "YES",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "inspection_date",
+              "type": "timestamp with time zone",
+              "nullable": "YES",
+              "default": "now()",
+              "is_pk": false
+            },
+            {
+              "column": "notes",
+              "type": "text",
+              "nullable": "YES",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "created_at",
+              "type": "timestamp with time zone",
+              "nullable": "YES",
+              "default": "now()",
+              "is_pk": false
+            }
+          ],
+          "sku_category": [
+            {
+              "column": "id",
+              "type": "uuid",
+              "nullable": "NO",
+              "default": "gen_random_uuid()",
+              "is_pk": true
+            },
+            {
+              "column": "name",
+              "type": "character varying",
+              "nullable": "NO",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "code",
+              "type": "character",
+              "nullable": "NO",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "description",
+              "type": "text",
+              "nullable": "YES",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "created_at",
+              "type": "timestamp with time zone",
+              "nullable": "YES",
+              "default": "now()",
+              "is_pk": false
+            },
+            {
+              "column": "updated_at",
+              "type": "timestamp with time zone",
+              "nullable": "YES",
+              "default": "now()",
+              "is_pk": false
+            }
+          ],
+          "sku_face_value": [
+            {
+              "column": "id",
+              "type": "uuid",
+              "nullable": "NO",
+              "default": "gen_random_uuid()",
+              "is_pk": true
+            },
+            {
+              "column": "name",
+              "type": "character varying",
+              "nullable": "NO",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "code",
+              "type": "character",
+              "nullable": "NO",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "description",
+              "type": "text",
+              "nullable": "YES",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "created_at",
+              "type": "timestamp with time zone",
+              "nullable": "YES",
+              "default": "now()",
+              "is_pk": false
+            },
+            {
+              "column": "updated_at",
+              "type": "timestamp with time zone",
+              "nullable": "YES",
+              "default": "now()",
+              "is_pk": false
+            }
+          ],
+          "sku_finding": [
+            {
+              "column": "id",
+              "type": "uuid",
+              "nullable": "NO",
+              "default": "gen_random_uuid()",
+              "is_pk": true
+            },
+            {
+              "column": "name",
+              "type": "character varying",
+              "nullable": "NO",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "code",
+              "type": "character",
+              "nullable": "NO",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "description",
+              "type": "text",
+              "nullable": "YES",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "created_at",
+              "type": "timestamp with time zone",
+              "nullable": "YES",
+              "default": "now()",
+              "is_pk": false
+            },
+            {
+              "column": "updated_at",
+              "type": "timestamp with time zone",
+              "nullable": "YES",
+              "default": "now()",
+              "is_pk": false
+            }
+          ],
+          "sku_locking": [
+            {
+              "column": "id",
+              "type": "uuid",
+              "nullable": "NO",
+              "default": "gen_random_uuid()",
+              "is_pk": true
+            },
+            {
+              "column": "name",
+              "type": "character varying",
+              "nullable": "NO",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "code",
+              "type": "character",
+              "nullable": "NO",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "description",
+              "type": "text",
+              "nullable": "YES",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "created_at",
+              "type": "timestamp with time zone",
+              "nullable": "YES",
+              "default": "now()",
+              "is_pk": false
+            },
+            {
+              "column": "updated_at",
+              "type": "timestamp with time zone",
+              "nullable": "YES",
+              "default": "now()",
+              "is_pk": false
+            }
+          ],
+          "sku_material": [
+            {
+              "column": "id",
+              "type": "uuid",
+              "nullable": "NO",
+              "default": "gen_random_uuid()",
+              "is_pk": true
+            },
+            {
+              "column": "name",
+              "type": "character varying",
+              "nullable": "NO",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "code",
+              "type": "character",
+              "nullable": "NO",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "description",
+              "type": "text",
+              "nullable": "YES",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "created_at",
+              "type": "timestamp with time zone",
+              "nullable": "YES",
+              "default": "now()",
+              "is_pk": false
+            },
+            {
+              "column": "updated_at",
+              "type": "timestamp with time zone",
+              "nullable": "YES",
+              "default": "now()",
+              "is_pk": false
+            }
+          ],
+          "sku_motif": [
+            {
+              "column": "id",
+              "type": "uuid",
+              "nullable": "NO",
+              "default": "gen_random_uuid()",
+              "is_pk": true
+            },
+            {
+              "column": "name",
+              "type": "character varying",
+              "nullable": "NO",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "code",
+              "type": "character",
+              "nullable": "NO",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "description",
+              "type": "text",
+              "nullable": "YES",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "created_at",
+              "type": "timestamp with time zone",
+              "nullable": "YES",
+              "default": "now()",
+              "is_pk": false
+            },
+            {
+              "column": "updated_at",
+              "type": "timestamp with time zone",
+              "nullable": "YES",
+              "default": "now()",
+              "is_pk": false
+            }
+          ],
+          "sku_size": [
+            {
+              "column": "id",
+              "type": "uuid",
+              "nullable": "NO",
+              "default": "gen_random_uuid()",
+              "is_pk": true
+            },
+            {
+              "column": "name",
+              "type": "character varying",
+              "nullable": "NO",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "code",
+              "type": "character",
+              "nullable": "NO",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "description",
+              "type": "text",
+              "nullable": "YES",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "created_at",
+              "type": "timestamp with time zone",
+              "nullable": "YES",
+              "default": "now()",
+              "is_pk": false
+            },
+            {
+              "column": "updated_at",
+              "type": "timestamp with time zone",
+              "nullable": "YES",
+              "default": "now()",
+              "is_pk": false
+            }
+          ],
+          "users": [
+            {
+              "column": "id",
+              "type": "uuid",
+              "nullable": "NO",
+              "default": "gen_random_uuid()",
+              "is_pk": true
+            },
+            {
+              "column": "name",
+              "type": "character varying",
+              "nullable": "NO",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "email",
+              "type": "character varying",
+              "nullable": "NO",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "role",
+              "type": "character varying",
+              "nullable": "NO",
+              "default": "'artisan'::character varying",
+              "is_pk": false
+            },
+            {
+              "column": "phone",
+              "type": "character varying",
+              "nullable": "YES",
+              "default": null,
+              "is_pk": false
+            },
+            {
+              "column": "is_active",
+              "type": "boolean",
+              "nullable": "YES",
+              "default": "true",
+              "is_pk": false
+            },
+            {
+              "column": "created_at",
+              "type": "timestamp with time zone",
+              "nullable": "YES",
+              "default": "now()",
+              "is_pk": false
+            },
+            {
+              "column": "updated_at",
+              "type": "timestamp with time zone",
+              "nullable": "YES",
+              "default": "now()",
+              "is_pk": false
+            }
+          ]
+        }
+      },
+      "error": null
+    },
+    {
+      "name": "Export Products",
+      "endpoint": "export/products",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": "SKU,Name,Description,Category,Material,Motif,Finding,Locking,Size,Active,Created\r\n0ABABCA000,Silver Bugadi Floral - Updated,Automated test product,Anklet,Brass,Abstract,Lobster,Clasp,Adjustable,False,2026-02-26T14:58:28.987745+00:00\r\n0BSFXSS000,Silver Bugadi Floral,Test product,Bugadi,Silver 925,Floral,NA,Screw,Small,True,2026-02-26T14:44:54.899735+00:00\r\n0BSFXSS001,Silver Bugadi Floral v2,Test product 2,Bugadi,Silver 925,Floral,NA,Screw,Small,True,2026-02-26T14:44:54.899735+00:00\r\n",
+      "error": null
+    },
+    {
+      "name": "Export Inventory",
+      "endpoint": "export/inventory",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": "SKU,Product,Stock Qty,Reserved,Unit Cost,Selling Price,MRP,Weight (g),Location\r\n0ABABCA000,Silver Bugadi Floral - Updated,100,0,,,,,\r\n",
+      "error": null
+    },
+    {
+      "name": "Export Job-Cards",
+      "endpoint": "export/job-cards",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": "Job Card #,SKU,Product,Target Qty,Completed,Artisan,Status,Priority,Start Date,Due Date\r\n",
+      "error": null
+    },
+    {
+      "name": "Export Qc-Logs",
+      "endpoint": "export/qc-logs",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": "Job Card #,Inspector,Passed,Failed,Defect Reason,Inspection Date\r\n",
       "error": null
     }
   ]
