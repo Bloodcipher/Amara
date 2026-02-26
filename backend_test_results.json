@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-26T15:21:30.674803",
+  "timestamp": "2026-02-26T15:25:00.088618",
   "summary": {
     "total_tests": 43,
     "passed": 41,
@@ -592,7 +592,7 @@
             "finding_id": "80b9fb1b-0ff5-4d6b-8169-ff7610095bbd",
             "locking_id": "1100c774-da37-4741-94a0-c70b3f8e57bd",
             "size_id": "513f9065-f431-42ff-b385-065ccf822503",
-            "is_active": true,
+            "is_active": false,
             "created_at": "2026-02-26T14:58:28.987745+00:00",
             "face_value_code": "0",
             "category_code": "A",
@@ -699,7 +699,7 @@
             "finding_id": "80b9fb1b-0ff5-4d6b-8169-ff7610095bbd",
             "locking_id": "1100c774-da37-4741-94a0-c70b3f8e57bd",
             "size_id": "513f9065-f431-42ff-b385-065ccf822503",
-            "is_active": true,
+            "is_active": false,
             "created_at": "2026-02-26T14:58:28.987745+00:00",
             "face_value_code": "0",
             "category_code": "A",
@@ -806,7 +806,7 @@
             "finding_id": "80b9fb1b-0ff5-4d6b-8169-ff7610095bbd",
             "locking_id": "1100c774-da37-4741-94a0-c70b3f8e57bd",
             "size_id": "513f9065-f431-42ff-b385-065ccf822503",
-            "is_active": true,
+            "is_active": false,
             "created_at": "2026-02-26T14:58:28.987745+00:00",
             "face_value_code": "0",
             "category_code": "A",
