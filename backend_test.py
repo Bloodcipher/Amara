@@ -325,9 +325,9 @@ class AMARAAPITester:
                 print(f"   🔍 QC logs search returned {len(items)} results")
 
     def test_inventory(self):
-        """Test inventory endpoints"""
+        """Test inventory endpoints with search functionality"""
         print("\n" + "="*50)
-        print("TESTING INVENTORY")
+        print("TESTING INVENTORY (WITH SEARCH)")
         print("="*50)
         
         success, response = self.run_test("Get Inventory", "GET", "inventory", 200,
@@ -339,6 +339,18 @@ class AMARAAPITester:
                 for item in response
             )
             print(f"   💰 Total inventory value: ${total_value:,.2f}")
+            
+        # Test inventory search by material
+        success, search_response = self.run_test("Inventory Search by Material", "GET", 
+                                               "inventory?q=silver", 200,
+                                               description="Search inventory by 'silver' keyword")
+        if success:
+            print(f"   🔍 Search 'silver' returned {len(search_response)} inventory items")
+            for item in search_response[:3]:  # Show first 3
+                product_name = item.get('product_name', 'Unknown')
+                sku = item.get('product_sku', 'No SKU')
+                stock = item.get('stock_qty', 0)
+                print(f"      [{sku}] {product_name} - Stock: {stock}")
 
     def test_production_details(self):
         """Test production details endpoints"""
