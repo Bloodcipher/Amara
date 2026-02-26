@@ -16,11 +16,11 @@ export default function Inventory() {
     product_id: '', stock_qty: '', unit_cost: '', selling_price: '', mrp: '', weight_grams: '', location: '',
   });
 
-  const loadData = useCallback(async () => {
+  const loadData = useCallback(async (q = search) => {
     try {
-      const [inv, prods] = await Promise.all([fetchInventory(), fetchProducts()]);
+      const [inv, prods] = await Promise.all([fetchInventory(q), fetchProducts({ page_size: 200 })]);
       setInventory(inv);
-      setProducts(prods);
+      setProducts(prods.items || []);
     } catch (e) {
       console.error(e);
     } finally {
