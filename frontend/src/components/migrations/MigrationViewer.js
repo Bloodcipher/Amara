@@ -23,8 +23,19 @@ export default function MigrationViewer() {
 
   useEffect(() => { loadMigrations(); }, [loadMigrations]);
 
-  const handleCopy = (content, filename) => {
-    navigator.clipboard.writeText(content);
+  const handleCopy = async (content, filename) => {
+    try {
+      await navigator.clipboard.writeText(content);
+    } catch {
+      const ta = document.createElement('textarea');
+      ta.value = content;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+    }
     setCopied(filename);
     setTimeout(() => setCopied(null), 2000);
   };
