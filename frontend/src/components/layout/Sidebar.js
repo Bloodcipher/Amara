@@ -91,7 +91,7 @@ export default function Sidebar({ activePage, onNavigate, onWidthChange }) {
 
       <button
         data-testid="sidebar-toggle"
-        onClick={() => setCollapsed(!collapsed)}
+        onClick={() => toggleCollapse()}
         className="flex items-center justify-center h-12 border-t border-white/5 text-neutral-500 hover:text-gold transition-colors"
       >
         {collapsed ? <ChevronRight className="w-4 h-4" /> : <ChevronLeft className="w-4 h-4" />}
